@@ -24,13 +24,13 @@ export class MarkdownViewerComponent implements OnInit {
 
       function marddownUrlToRouteUrl(url: string) {
         if (url.includes('/blob/master/src/lib/') || url.endsWith('.md')) {
-          const pathArr = url.replace('/blob/master/src/lib/', '').split('/');
+          const pathArr = url.replace('/blob/master/src/lib/components/', 'reference/').split('/');
           pathArr.pop();
           return pathArr.join('/');
         }
         return url;
       }
-      const repoURL = 'https://github.com/milocosmopolitan/repoName';
+      const repoURL = 'https://github.com/milocosmopolitan/angular-uix';
       const link = href.includes(repoURL)
         ? marddownUrlToRouteUrl(href.replace(repoURL, '/'))
         : href;
