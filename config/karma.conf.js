@@ -1,13 +1,19 @@
 // Karma configuration file, see link for more information
 // https://karma-runner.github.io/0.13/config/configuration-file.html
 
+var isTest = process.env.NODE_ENV === 'test';
+var browser = [isTest ? 'PhantomJS' : 'Chrome'];
+
 module.exports = function (config) {
   config.set({
-    basePath: '',
+    basePath: '../',
     frameworks: ['jasmine', '@angular/cli'],
     plugins: [
       require('karma-jasmine'),
+      require('karma-phantomjs-launcher'),
       require('karma-chrome-launcher'),
+      require('karma-phantomjs-launcher'),
+      require('karma-spec-reporter'),
       require('karma-jasmine-html-reporter'),
       require('karma-coverage-istanbul-reporter'),
       require('@angular/cli/plugins/karma')
@@ -32,13 +38,22 @@ module.exports = function (config) {
       environment: 'dev'
     },
     reporters: config.angularCli && config.angularCli.codeCoverage
-              ? ['progress', 'coverage-istanbul']
-              : ['progress', 'kjhtml'],
+      ? ['spec', 'coverage-istanbul']
+      : ['spec', 'kjhtml'],
+    specReporter: {
+      maxLogLines: 5,              // limit number of lines logged per test
+      suppressErrorSummary: false, // print error summary
+      suppressFailed: false,       // print information about failed tests
+      suppressPassed: false,       // print information about passed tests
+      suppressSkipped: true,       // do not print information about skipped tests
+      showSpecTiming: false,       // do not print the time elapsed for each spec
+      failFast: true               // test would finish with error when a first fail occurs.
+    },
     port: 9876,
     colors: true,
-    logLevel: config.LOG_INFO,
+    logLevel: config.LOG_ERROR,
     autoWatch: true,
-    browsers: ['Chrome'],
+    browsers: browser,
     singleRun: false
   });
 };
