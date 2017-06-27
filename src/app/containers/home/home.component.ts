@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'demo-home',
-  template: `<div>Home</div>`,
+  template: `<demo-md-viewer path="./assets/wiki/README.md"></demo-md-viewer>`,
   styleUrls: ['./home.component.less']
 })
 export class HomeComponent {}
