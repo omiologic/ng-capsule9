@@ -1,5 +1,6 @@
 ## Introduction
 
+ng-trunks is angular 4 ui component based on [Bulma](https://github.com/jgthms/bulma).
 
 ## Getting Started
 

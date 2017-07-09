@@ -1,8 +1,8 @@
-import {Component, HostBinding, ViewEncapsulation} from '@angular/core';
+import {Component, ViewEncapsulation} from '@angular/core';
 @Component({
-  selector: 'ui-menu',
+  selector: 'cp-menu',
   template: `
-    <ng-content selector="ui-menu-item"></ng-content>
+    <ng-content selector="cp-menu-item"></ng-content>
   `,
   styleUrls: ['./menu.component.less'],
   encapsulation: ViewEncapsulation.None
@@ -11,7 +11,7 @@ import {Component, HostBinding, ViewEncapsulation} from '@angular/core';
 export class MenuComponent {}
 
 @Component({
-  selector: 'ui-menu-label',
+  selector: 'cp-menu-label',
   template: `<ng-content></ng-content>`,
   encapsulation: ViewEncapsulation.None
 })
@@ -20,7 +20,7 @@ export class MenuLabelComponent {}
 
 
 @Component({
-  selector: 'ui-menu-item',
+  selector: 'cp-menu-item',
   template: `<ng-content></ng-content>`,
   encapsulation: ViewEncapsulation.None
 })

@@ -1,6 +1,6 @@
 import {Directive, HostBinding} from '@angular/core';
 @Directive({
-  selector: 'ui-menu[uiDropdown], ui-menu[dropdown]'
+  selector: 'cp-menu[cpDropdown], cp-menu[dropdown]'
 })
 
 export class DropdownDirective {
