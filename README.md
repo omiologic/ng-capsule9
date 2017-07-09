@@ -1,5 +1,6 @@
 ## Introduction
 
+ng-capsule9 is angular 4 ui component based on [Bulma](https://github.com/jgthms/bulma).
 
 ## Getting Started
 
@@ -8,14 +9,8 @@
 Run the following command on your terminal to add dependencies in
  `package.json`.
 
-**for dev-dependency(recommended)**
 ```bash
-npm install --save-dev git+https://github.com/milocosmopolitan/angular-uix.git
-```
-
-**for dependency**
-```bash
-npm install --save git+https://github.com/milocosmopolitan/angular-uix.git
+npm install --save git+https://github.com/omiologic/ng-capsule9.git
 ```
 
 ### 2. Import module
@@ -26,14 +21,14 @@ In order to use DHS Common Module on your Angular4 project, you must import the 
 
 ``` javascript
 import ...
-import { Ng4UIModule } from 'dhs-common-module/src/lib/module';
+import { NgCapsule9Module } from 'ng-capsule9';
 
 @NgModule({
   declarations: [
     AppComponent,
   ],
   imports: [
-    Ng4UIModule.forRoot()
+    NgCapsule9Module.forRoot()
   ],
   bootstrap: [AppComponent]
 })
@@ -52,7 +47,3 @@ export class AppModule {}
 | `npm run test-browser` | Run karma testing on Chrome browser |
 | `npm run coverage` | Run karma testing istanbul coverage |
 | `npm run coverage-open` | Open karma coverage test report |
-
-## Modules
-
-#### [Menu](https://github.com/milocosmopolitan/angular-uix/blob/master/src/lib/components/menu/menu.md)

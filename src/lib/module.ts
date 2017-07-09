@@ -10,10 +10,10 @@ const UI_MODULES = [
   exports: UI_MODULES
 })
 
-export class Ng4UIModule {
+export class NgCapsule9Module {
   static forRoot(): ModuleWithProviders {
     return {
-      ngModule: Ng4UIModule,
+      ngModule: NgCapsule9Module,
       providers: []
     }
   }

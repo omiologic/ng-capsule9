@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "project": {
-    "name": "angular4-ui-components"
+    "name": "ng-capsule9"
   },
   "apps": [
     {
@@ -20,7 +20,7 @@
       "polyfills": "../polyfills.ts",
       "test": "test.ts",
       "tsconfig": "../tsconfig.json",
-      "prefix": "ui",
+      "prefix": "cp",
       "styles": [
         "../../node_modules/prismjs/themes/prism.css",
         "styles.less"

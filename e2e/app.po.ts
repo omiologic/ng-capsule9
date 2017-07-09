@@ -1,6 +1,6 @@
 import { browser, element, by } from 'protractor';
 
-export class OmioCmsPage {
+export class NgCapsule9Page {
   navigateTo() {
     return browser.get('/');
   }
