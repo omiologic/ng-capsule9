@@ -23,7 +23,9 @@
       "prefix": "cp",
       "styles": [
         "../../node_modules/prismjs/themes/prism.css",
-        "styles.less"
+        "../../node_modules/capsule9/css/capsule9.css",
+        "../../node_modules/font-awesome/css/font-awesome.css",
+        "styles.scss"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",
@@ -55,7 +57,7 @@
     }
   },
   "defaults": {
-    "styleExt": "less",
+    "styleExt": "scss",
     "component": {}
   }
 }

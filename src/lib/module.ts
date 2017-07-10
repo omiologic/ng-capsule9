@@ -1,8 +1,14 @@
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import {MenuModule} from './components/menu/menu.module';
+import {ColumnModule} from './components/column/column.module';
+import {SidebarModule} from './components/sidebar/sidebar.module';
+import {TabsetModule} from './components/tabset/tabset.module';
 
 const UI_MODULES = [
-  MenuModule
+  MenuModule,
+  ColumnModule,
+  SidebarModule,
+  TabsetModule
 ];
 
 @NgModule({
