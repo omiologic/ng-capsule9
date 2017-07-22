@@ -13,12 +13,11 @@
         { "glob": "README.md", "input": "../../", "output": "./assets/wiki/" },
         "assets",
         "favicon.ico"
-
       ],
       "index": "index.html",
       "main": "../main.ts",
       "polyfills": "../polyfills.ts",
-      "test": "test.ts",
+      "test": "../test.ts",
       "tsconfig": "../tsconfig.json",
       "prefix": "cp",
       "styles": [
@@ -27,6 +26,27 @@
         "../../node_modules/font-awesome/css/font-awesome.css",
         "styles.scss"
       ],
+      "scripts": [],
+      "environmentSource": "environments/environment.ts",
+      "environments": {
+        "dev": "environments/environment.ts",
+        "hmr": "environments/environment.hmr.ts",
+        "prod": "environments/environment.prod.ts"
+      }
+    },
+    {
+      "name":"lib",
+      "root": "src/lib",
+      "outDir": "dist",
+      "assets": [
+        "assets",
+        "favicon.ico"
+      ],
+      "main": "../main.ts",
+      "polyfills": "../polyfills.ts",
+      "test": "../test.ts",
+      "tsconfig": "../tsconfig.json",
+      "prefix": "cp",
       "scripts": [],
       "environmentSource": "environments/environment.ts",
       "environments": {

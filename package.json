@@ -42,7 +42,7 @@
     "zone.js": "^0.8.4"
   },
   "devDependencies": {
-    "@angular/cli": "1.0.3",
+    "@angular/cli": "1.2.1",
     "@angular/compiler-cli": "^4.1.1",
     "@angularclass/hmr": "^1.2.2",
     "@types/cucumber": "^2.0.1",
