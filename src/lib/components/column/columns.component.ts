@@ -26,7 +26,6 @@ export class ColumnsComponent {
 
   @Input()
   set options(config: ColumnsConfig) {
-    console.log('options', config);
     for (const option in config) {
       if (option) {
         switch (option) {

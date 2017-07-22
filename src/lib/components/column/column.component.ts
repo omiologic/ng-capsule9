@@ -20,8 +20,8 @@ export class ColumnComponent implements AfterViewInit {
   @Input() offset: number;
 
   constructor(
-    private _elRef: ElementRef,
-    private _renderer: Renderer2
+    public elRef: ElementRef,
+    public renderer: Renderer2
   ) {
 
   }
@@ -32,19 +32,19 @@ export class ColumnComponent implements AfterViewInit {
 
   setHostClass() {
     if (this.mobile) {
-      this._renderer.addClass(this._elRef.nativeElement, `is-${this.mobile}-mobile`)
+      this.renderer.addClass(this.elRef.nativeElement, `is-${this.mobile}-mobile`)
     }
 
     if (this.tablet) {
-      this._renderer.addClass(this._elRef.nativeElement, `is-${this.tablet}-tablet`)
+      this.renderer.addClass(this.elRef.nativeElement, `is-${this.tablet}-tablet`)
     }
 
     if (this.desktop) {
-      this._renderer.addClass(this._elRef.nativeElement, `is-${this.desktop}-desktop`)
+      this.renderer.addClass(this.elRef.nativeElement, `is-${this.desktop}-desktop`)
     }
 
     if (this.offset) {
-      this._renderer.addClass(this._elRef.nativeElement, `is-offset-${this.offset}`)
+      this.renderer.addClass(this.elRef.nativeElement, `is-offset-${this.offset}`)
     }
   }
 }
