@@ -1,0 +1,17 @@
+<cp-menu>
+  <ng-container *ngFor="let item of data">
+    <cp-menu-label>{{item.label.text}}</cp-menu-label>
+    <cp-menu-list *ngIf="item.list && item.list.length">
+      <cp-menu-item *ngFor="let menuItem of item.list">
+        <a *ngIf="menuItem.label.link" [routerLink]="menuItem.label.link" routerLinkActive="is-active">{{menuItem.label.text}}</a>
+        <a *ngIf="!menuItem.label.link" routerLinkActive="is-active">{{menuItem.label.text}}</a>
+        <cp-menu-list *ngIf="menuItem.list && menuItem.list.length">
+          <cp-menu-item *ngFor="let submenuItem of menuItem.list">
+            <a *ngIf="submenuItem.label.link" [routerLink]="submenuItem.label.link" routerLinkActive="is-active">{{submenuItem.label.text}}</a>
+            <a *ngIf="!submenuItem.label.link" routerLinkActive="is-active">{{submenuItem.label.text}}</a>
+          </cp-menu-item>
+        </cp-menu-list>
+      </cp-menu-item>
+    </cp-menu-list>
+  </ng-container>
+</cp-menu>

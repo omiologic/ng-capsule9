@@ -9,17 +9,22 @@ import { appRoutes } from './app.routes';
 import { HomeComponent } from './containers/home/home.component';
 import { NotFoundComponent } from './containers/not-found/not-found.component';
 import { ReferenceComponent } from './containers/references/references.component';
-import { MenuAPIComponent } from './containers/menu/menu.component';
-import {MarkdownViewerComponent} from './components/markdown-viewer/markdown-viewer.component';
-import {Ng4UIModule} from '../lib/module';
-import {MarkdownModule} from 'angular2-markdown';
+
+import { MarkdownViewerComponent } from './components/markdown-viewer/markdown-viewer.component';
+import { MarkdownModule } from 'angular2-markdown';
+import { NgCapsule9Module } from '../lib/module';
+import { DemoMenuComponent } from './containers/menu/menu.component';
+import { DemoColumnComponent } from './containers/column/column.component';
+import {DemoTabsComponent} from './containers/tabs/tabs.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     NotFoundComponent,
-    MenuAPIComponent,
+    DemoMenuComponent,
+    DemoColumnComponent,
+    DemoTabsComponent,
     ReferenceComponent,
     MarkdownViewerComponent
   ],
@@ -27,7 +32,7 @@ import {MarkdownModule} from 'angular2-markdown';
     BrowserModule,
     FormsModule,
     HttpModule,
-    Ng4UIModule.forRoot(),
+    NgCapsule9Module.forRoot(),
     MarkdownModule.forRoot(),
     RouterModule.forRoot(appRoutes),
   ],

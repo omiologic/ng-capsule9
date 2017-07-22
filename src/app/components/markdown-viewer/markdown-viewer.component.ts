@@ -9,7 +9,7 @@ import {MarkdownService} from 'angular2-markdown';
 @Component({
   selector: 'demo-md-viewer, markdown-viewer',
   template: `<div Markdown [path]="path" class="markdown-content"></div>`,
-  styleUrls: ['./markdown-viewer.component.less'],
+  styleUrls: ['./markdown-viewer.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
 

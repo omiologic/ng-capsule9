@@ -1,10 +1,10 @@
 import {Component} from '@angular/core';
 @Component({
-  selector: 'demo-menu-api',
+  selector: 'demo-menu',
   templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.less']
+  styleUrls: ['./menu.component.scss']
 })
 
-export class MenuAPIComponent {
+export class DemoMenuComponent {
 
 }

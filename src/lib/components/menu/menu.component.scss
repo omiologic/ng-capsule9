@@ -1,0 +1,12 @@
+cp-menu,
+cp-menu-item,
+cp-menu-list,
+cp-menu-label {
+  display: block;
+}
+
+cp-menu-list.menu-list cp-menu-item > cp-menu-list {
+  border-left: 1px solid #dbdbdb;
+  margin: 0.75em;
+  padding-left: 0.75em;
+}
