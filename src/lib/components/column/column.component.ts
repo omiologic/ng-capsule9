@@ -14,16 +14,16 @@ import {AfterViewInit, Component, ElementRef, HostBinding, Input, OnInit, Render
 export class ColumnComponent implements AfterViewInit {
   @HostBinding('class.column') _isColumn = true;
 
-  @Input('mobile') private _mobileSize: number;
-  @Input('tablet') private _tabletSize: number;
-  @Input('desktop') private _desktopSize: number;
-  @Input('offset') private _offsetSize: number;
+  @Input() mobile: number;
+  @Input() tablet: number;
+  @Input() desktop: number;
+  @Input() offset: number;
 
   constructor(
     private _elRef: ElementRef,
     private _renderer: Renderer2
   ) {
-    
+
   }
 
   ngAfterViewInit() {
@@ -31,20 +31,20 @@ export class ColumnComponent implements AfterViewInit {
   }
 
   setHostClass() {
-    if (this._mobileSize) {
-      this._renderer.addClass(this._elRef.nativeElement, `is-${this._mobileSize}-mobile`)
+    if (this.mobile) {
+      this._renderer.addClass(this._elRef.nativeElement, `is-${this.mobile}-mobile`)
     }
 
-    if (this._tabletSize) {
-      this._renderer.addClass(this._elRef.nativeElement, `is-${this._tabletSize}-tablet`)
+    if (this.tablet) {
+      this._renderer.addClass(this._elRef.nativeElement, `is-${this.tablet}-tablet`)
     }
 
-    if (this._desktopSize) {
-      this._renderer.addClass(this._elRef.nativeElement, `is-${this._desktopSize}-desktop`)
+    if (this.desktop) {
+      this._renderer.addClass(this._elRef.nativeElement, `is-${this.desktop}-desktop`)
     }
 
-    if (this._offsetSize) {
-      this._renderer.addClass(this._elRef.nativeElement, `is-offset-${this._offsetSize}`)
+    if (this.offset) {
+      this._renderer.addClass(this._elRef.nativeElement, `is-offset-${this.offset}`)
     }
   }
 }
