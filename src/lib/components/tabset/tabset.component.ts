@@ -11,7 +11,6 @@ let nextId = 0;
 export interface TabChangeEvent {
   activeId: string;
   nextId: string;
-  preventDefault: () => void;
 }
 
 @Directive({
@@ -49,7 +48,7 @@ export class TabComponent {
           [ngClass]="{'is-active': tab.id === activeId}">
         <a [id]="tab.id"
            [class.disabled]="tab.disabled"
-           href (click)="!!select(tab.id)">
+           (click)="select(tab.id)">
           {{tab.title}}
           <ng-template [ngTemplateOutlet]="tab.tabTitle?.templateRef"></ng-template>
         </a>
@@ -86,10 +85,12 @@ export class TabsetComponent implements AfterContentChecked {
     console.log('select', tabId);
     const selectedTab = this._getTabById(tabId);
     if (selectedTab && !selectedTab.disabled && this.activeId !== selectedTab.id) {
-      let defaultPrevented = false;
+      const defaultPrevented = false;
 
-      this.tabChange.emit(
-        {activeId: this.activeId, nextId: selectedTab.id, preventDefault: () => { defaultPrevented = true; }});
+      this.tabChange.emit({
+          activeId: this.activeId,
+          nextId: selectedTab.id
+        });
 
       if (!defaultPrevented) {
         this.activeId = selectedTab.id;
@@ -101,7 +102,7 @@ export class TabsetComponent implements AfterContentChecked {
     const activeTab = this._getTabById(this.activeId);
     this.activeId = activeTab ? activeTab.id : (this.tabs.length ? this.tabs.first.id : null);
 
-    console.log('ngAfterContentChecked', this.activeId, this.tabs);
+    // console.log('ngAfterContentChecked', this.activeId, this.tabs);
   }
 
   private _getTabById(id: string): TabComponent {
