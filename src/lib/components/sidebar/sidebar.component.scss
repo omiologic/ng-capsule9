@@ -1,3 +1,59 @@
 cp-sidebar {
   display: block;
+  height: 100%;
+  box-shadow: 1px 2px 15px rgba(0, 0, 0, 0.08);
+}
+
+
+/*
+ * ng-capsule9
+ */
+cp-sidebar {
+  .brand {
+    padding: 0.5em;
+  }
+  .menu-label {
+    margin: 0 !important;
+    padding: 0.75em;
+    background-color: #EFEFEF;
+  }
+  > .menu > .menu-list > cp-menu-item > .menu-list {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    border-left: 0;
+    &> cp-menu-item > a {
+      padding-left: 1.5em;
+    }
+
+    &::before{
+      content: '';
+      left: 0.75em;
+      background-color: #dbdbdb;
+      width: 1px;
+      height: 100%;
+      display: block;
+      position: absolute;
+    }
+  }
+}
+/*
+ * Dark Theme
+ */
+.dark-theme cp-sidebar {
+  background: #292929;
+  cp-menu-list {
+    background: #414141;
+
+    > cp-menu-item > a {
+      color: #dedede;
+      &:hover {
+        background-color: #545454;
+      }
+    }
+  }
+
+  > .menu > .menu-list > cp-menu-item > .menu-list {
+    background: #292929;
+  }
 }

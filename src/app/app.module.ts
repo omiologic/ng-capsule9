@@ -8,7 +8,6 @@ import { RouterModule } from '@angular/router';
 import { appRoutes } from './app.routes';
 import { HomeComponent } from './containers/home/home.component';
 import { NotFoundComponent } from './containers/not-found/not-found.component';
-import { ReferenceComponent } from './containers/references/references.component';
 
 import { MarkdownViewerComponent } from './components/markdown-viewer/markdown-viewer.component';
 import { MarkdownModule } from 'angular2-markdown';
@@ -25,7 +24,6 @@ import {DemoTabsComponent} from './containers/tabs/tabs.component';
     DemoMenuComponent,
     DemoColumnComponent,
     DemoTabsComponent,
-    ReferenceComponent,
     MarkdownViewerComponent
   ],
   imports: [

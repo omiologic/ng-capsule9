@@ -1,12 +1,10 @@
-<div class="app">
+<div class="app fixed-sidebar">
   <div class="app-section">
     <div class="app-nav">
-      <cp-sidebar [data]="sidebar"></cp-sidebar>
+      <cp-sidebar [data]="sidebar" [brand]="brand"></cp-sidebar>
     </div>
     <div class="app-content">
-      <div id="content" class="content content-full-width">
-        <router-outlet></router-outlet>
-      </div>
+      <router-outlet></router-outlet>
     </div>
   </div>
 </div>

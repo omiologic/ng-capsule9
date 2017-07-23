@@ -1,4 +1,8 @@
 <cp-menu>
+  <div class="brand" *ngIf="brand">
+    <h1 class="title is-4">{{brand.name}}</h1>
+    <h2 class="subtitle is-6">{{brand.description}}</h2>
+  </div>
   <ng-container *ngFor="let item of data">
     <cp-menu-label>{{item.label.text}}</cp-menu-label>
     <cp-menu-list *ngIf="item.list && item.list.length">

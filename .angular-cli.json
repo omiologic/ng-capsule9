@@ -11,7 +11,7 @@
       "assets": [
         { "glob": "**/*.md", "input": "../lib/", "output": "./assets/wiki/" },
         { "glob": "README.md", "input": "../../", "output": "./assets/wiki/" },
-        "assets",
+        { "glob": "**/*", "input": "../assets/img", "output": "./assets/img" },
         "favicon.ico"
       ],
       "index": "index.html",
