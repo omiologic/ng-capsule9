@@ -38,7 +38,7 @@ describe('ColumnComponent', () => {
         component[option] = 10;
         component.setHostClass();
         expect(spy).toHaveBeenCalled();
-        if(option === 'offset') {
+        if (option === 'offset') {
           expect(spy).toHaveBeenCalledWith(component.elRef.nativeElement, `is-${option}-${component[option]}`);
         } else {
           expect(spy).toHaveBeenCalledWith(component.elRef.nativeElement, `is-${component[option]}-${option}`);
@@ -46,4 +46,11 @@ describe('ColumnComponent', () => {
       });
     }
   });
+  describe('ngAfterViewInit()', () => {
+    it('Should have called setHostClass()', () => {
+      const spy = spyOn(component, 'setHostClass');
+      component.ngAfterViewInit();
+      expect(spy).toHaveBeenCalled();
+    });
+  })
 });
