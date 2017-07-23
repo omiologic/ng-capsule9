@@ -39,13 +39,10 @@ describe('ColumnsComponent', () => {
         option[testCases[i].option] = true;
         component.options = option;
         fixture.detectChanges();
-        // console.log('fixture:', fixture.nativeElement.classList.value.includes('is-centered'));
         const isClassIncluded = fixture.nativeElement.className.includes(testCases[i].class);
         expect(isClassIncluded).toBeTruthy();
       });
     }
-
-
   });
-})
+});
 
