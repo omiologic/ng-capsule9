@@ -26,7 +26,6 @@ import { DemoModalComponent } from './containers/modal/modal.component'
     DemoColumnComponent,
     DemoTabsComponent,
     DemoModalComponent,
-    ReferenceComponent,
     MarkdownViewerComponent
   ],
   imports: [
