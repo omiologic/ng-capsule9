@@ -16,6 +16,7 @@ import { NgCapsule9Module } from '../lib/module';
 import { DemoMenuComponent } from './containers/menu/menu.component';
 import { DemoColumnComponent } from './containers/column/column.component';
 import {DemoTabsComponent} from './containers/tabs/tabs.component';
+import { DemoModalComponent } from './containers/modal/modal.component'
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import {DemoTabsComponent} from './containers/tabs/tabs.component';
     DemoMenuComponent,
     DemoColumnComponent,
     DemoTabsComponent,
+    DemoModalComponent,
     ReferenceComponent,
     MarkdownViewerComponent
   ],
