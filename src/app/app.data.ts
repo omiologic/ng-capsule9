@@ -34,6 +34,14 @@ export const appSidebar = [
             label: { text: 'Tile', link: 'module/Tile' }
           }
         ]
+      },
+      {
+        label: { text: 'Notification & Panel' },
+        list: [
+          {
+            label: { text: 'Modal', link: 'module/modal' }
+          }
+        ]
       }
     ]
   }
