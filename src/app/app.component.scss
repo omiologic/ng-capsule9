@@ -1,0 +1,19 @@
+/*
+ * Default app layout
+ */
+
+.app-nav {
+  z-index: 100;
+}
+
+
+/*
+ * Fixed sidebar
+ */
+
+.app.fixed-sidebar {
+  .app-nav,
+  .app-content {
+    height: 100vh;
+  }
+}

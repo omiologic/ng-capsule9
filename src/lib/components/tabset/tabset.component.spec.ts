@@ -1,6 +1,6 @@
 import { TestBed, async } from '@angular/core/testing';
-import { TabChangeEvent, TabComponent, TabContentDirective, TabsetComponent, TabTitleDirective } from './tabset.component';
-import {Component, ContentChild, ViewChild} from "@angular/core";
+import { TabComponent, TabContentDirective, TabsetComponent, TabTitleDirective } from './tabset.component';
+import {Component, ViewChild} from '@angular/core';
 
 describe('TabsetComponent', () => {
   let fixture;
@@ -48,7 +48,7 @@ describe('TabsetComponent', () => {
   it('Should create the tabset', async(() => {
     expect(component).toBeTruthy();
     expect(component.tabset).not.toBeFalsy();
-    console.log('component', component.tabset);
+    // console.log('component', component.tabset);
   }));
 
   it('Should render TabComponent', () => {

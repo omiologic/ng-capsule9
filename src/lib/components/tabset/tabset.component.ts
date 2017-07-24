@@ -82,7 +82,7 @@ export class TabsetComponent implements AfterContentChecked {
   }
 
   select(tabId: string) {
-    console.log('select', tabId);
+    // console.log('select', tabId);
     const selectedTab = this._getTabById(tabId);
     if (selectedTab && !selectedTab.disabled && this.activeId !== selectedTab.id) {
       const defaultPrevented = false;
