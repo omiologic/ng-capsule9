@@ -15,7 +15,7 @@ npm install --save git+https://github.com/omiologic/ng-capsule9.git
 
 ### 2. Import module
 
-In order to use DHS Common Module on your Angular4 project, you must import the module in `app.module.ts`.
+In order to use NG Capsule9 on your Angular4 project, you must import the module in `app.module.ts`.
 
 **src/app.module.ts**
 
