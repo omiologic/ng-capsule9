@@ -1,6 +1,6 @@
 export const appSidebar = [
   {
-    label: { text: 'Guide' },
+    label: { text: 'Guide', icon: 'book' },
     list: [
       {
         label: { text: 'Quickstart', link: 'quickstart'}
@@ -8,7 +8,7 @@ export const appSidebar = [
     ]
   },
   {
-    label: { text: 'Modules' },
+    label: { text: 'Modules', icon: 'cubes' },
     list: [
       {
         label: { text: 'Navigation' },
