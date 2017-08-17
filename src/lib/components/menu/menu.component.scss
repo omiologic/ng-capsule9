@@ -5,8 +5,40 @@ cp-menu-label {
   display: block;
 }
 
+cp-menu-label.menu-label {
+  cp-icon {
+    vertical-align: middle;
+  }
+}
 cp-menu-list.menu-list cp-menu-item > cp-menu-list {
   border-left: 1px solid #dbdbdb;
   margin: 0.75em;
   padding-left: 0.75em;
+}
+
+
+cp-menu-item.has-sub {
+  > cp-menu-list {
+    display: block;
+    overflow: hidden;
+    max-height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    //padding-right: 30px;
+
+    -moz-transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+
+  }
+
+  &.expand > cp-menu-list {
+    -moz-transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    //padding-right: 30px;
+    max-height: 100%;
+  }
 }
