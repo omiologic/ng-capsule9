@@ -1,21 +1,69 @@
-<cp-menu>
+<cp-menu expandable>
   <div class="brand" *ngIf="brand">
     <h1 class="title is-4">{{brand.name}}</h1>
     <h2 class="subtitle is-6">{{brand.description}}</h2>
   </div>
-  <ng-container *ngFor="let item of data">
-    <cp-menu-label>{{item.label.text}}</cp-menu-label>
-    <cp-menu-list *ngIf="item.list && item.list.length">
-      <cp-menu-item *ngFor="let menuItem of item.list">
-        <a *ngIf="menuItem.label.link" [routerLink]="menuItem.label.link" routerLinkActive="is-active">{{menuItem.label.text}}</a>
-        <a *ngIf="!menuItem.label.link" routerLinkActive="is-active">{{menuItem.label.text}}</a>
-        <cp-menu-list *ngIf="menuItem.list && menuItem.list.length">
-          <cp-menu-item *ngFor="let submenuItem of menuItem.list">
-            <a *ngIf="submenuItem.label.link" [routerLink]="submenuItem.label.link" routerLinkActive="is-active">{{submenuItem.label.text}}</a>
-            <a *ngIf="!submenuItem.label.link" routerLinkActive="is-active">{{submenuItem.label.text}}</a>
-          </cp-menu-item>
-        </cp-menu-list>
-      </cp-menu-item>
-    </cp-menu-list>
+
+  <ng-container *ngIf="options.fixedTopLevel">
+    <ng-container *ngFor="let item of data">
+      <cp-menu-label>
+        <cp-icon *ngIf="item.label.icon" [icon]="item.label.icon"></cp-icon>
+        {{item.label.text}}
+      </cp-menu-label>
+      <cp-menu-list *ngIf="item.list && item.list.length">
+        <cp-menu-item *ngFor="let menuItem of item.list"
+                      [name]="menuItem.label.text"
+                      [has-sub]="(item.list && item.list.length)">
+          <a *ngIf="menuItem.label.link" [routerLink]="menuItem.label.link" routerLinkActive="is-active">{{menuItem.label.text}}</a>
+          <a *ngIf="!menuItem.label.link" routerLinkActive="is-active">{{menuItem.label.text}}</a>
+          <cp-menu-list *ngIf="menuItem.list && menuItem.list.length" sub-list>
+            <cp-menu-item *ngFor="let submenuItem of menuItem.list"
+                          [has-sub]="(submenuItem.list && submenuItem.list.length)"
+                          [name]="submenuItem.label.text"
+                          [parent]="menuItem.label.text">
+              <a *ngIf="submenuItem.label.link" [routerLink]="submenuItem.label.link" routerLinkActive="is-active">{{submenuItem.label.text}}</a>
+              <a *ngIf="!submenuItem.label.link" routerLinkActive="is-active">{{submenuItem.label.text}}</a>
+            </cp-menu-item>
+          </cp-menu-list>
+        </cp-menu-item>
+      </cp-menu-list>
+    </ng-container>
+  </ng-container>
+
+  <ng-container *ngIf="!options.fixedTopLevel">
+    <cp-menu-item *ngFor="let item of data"
+                  [name]="item.label.text"
+                  [has-sub]="(item.list && item.list.length)">
+      <a *ngIf="item.label.link" [routerLink]="item.label.link" routerLinkActive="is-active">
+        <cp-menu-label>
+          <cp-icon *ngIf="item.label.icon" [icon]="item.label.icon"></cp-icon>
+          {{item.label.text}}
+        </cp-menu-label>
+      </a>
+      <a *ngIf="!item.label.link" routerLinkActive="is-active">
+        <cp-menu-label>
+          <cp-icon *ngIf="item.label.icon" [icon]="item.label.icon"></cp-icon>
+          {{item.label.text}}
+        </cp-menu-label>
+      </a>
+      <cp-menu-list *ngIf="item.list && item.list.length" sub-list>
+        <cp-menu-item *ngFor="let menuItem of item.list"
+                      [name]="menuItem.label.text"
+                      [parent]="item.label.text"
+                      [has-sub]="(item.list && item.list.length)">
+          <a *ngIf="menuItem.label.link" [routerLink]="menuItem.label.link" routerLinkActive="is-active">{{menuItem.label.text}}</a>
+          <a *ngIf="!menuItem.label.link" routerLinkActive="is-active">{{menuItem.label.text}}</a>
+          <cp-menu-list *ngIf="menuItem.list && menuItem.list.length" sub-list>
+            <cp-menu-item *ngFor="let submenuItem of menuItem.list"
+                          [has-sub]="(submenuItem.list && submenuItem.list.length)"
+                          [name]="submenuItem.label.text"
+                          [parent]="menuItem.label.text">
+              <a *ngIf="submenuItem.label.link" [routerLink]="submenuItem.label.link" routerLinkActive="is-active">{{submenuItem.label.text}}</a>
+              <a *ngIf="!submenuItem.label.link" routerLinkActive="is-active">{{submenuItem.label.text}}</a>
+            </cp-menu-item>
+          </cp-menu-list>
+        </cp-menu-item>
+      </cp-menu-list>
+    </cp-menu-item>
   </ng-container>
 </cp-menu>
