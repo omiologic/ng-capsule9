@@ -30,7 +30,7 @@ export class MarkdownViewerComponent implements OnInit {
         }
         return url;
       }
-      const repoURL = 'https://github.com/milocosmopolitan/angular-uix';
+      const repoURL = 'https://github.com/omiologic/ng-capsule9';
       const link = href.includes(repoURL)
         ? marddownUrlToRouteUrl(href.replace(repoURL, '/'))
         : href;

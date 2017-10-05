@@ -9,7 +9,7 @@ import {DemoModalComponent} from './containers/modal/modal.component';
 export const appRoutes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
   { path: 'module/menu', component: DemoMenuComponent },
-  { path: 'module/column', component: DemoColumnComponent },
+  { path: 'module/column', loadChildren: './containers/column/column.module#DemoColumnModule' },
   { path: 'module/tabs', component: DemoTabsComponent },
   { path: 'module/modal', component: DemoModalComponent },
   { path: '**', component: NotFoundComponent }
