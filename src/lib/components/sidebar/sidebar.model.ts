@@ -7,3 +7,9 @@ export interface SidebarItemLabel {
   text: string,
   link?: string
 }
+
+export interface SidebarConfig {
+  fixedTopLevel?: boolean;
+  minified?: boolean;
+  theme?: 'default' | 'dark' | 'iconize';
+}

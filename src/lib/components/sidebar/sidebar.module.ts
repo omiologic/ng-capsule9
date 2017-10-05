@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import {SidebarComponent} from './sidebar.component';
 import {MenuModule} from '../menu/menu.module';
 import {RouterModule} from '@angular/router';
+import {IconModule} from '../icon/icon.module';
 
 @NgModule({
   declarations: [
@@ -11,7 +12,8 @@ import {RouterModule} from '@angular/router';
   imports: [
     CommonModule,
     RouterModule,
-    MenuModule
+    MenuModule,
+    IconModule
   ],
   exports: [
     SidebarComponent

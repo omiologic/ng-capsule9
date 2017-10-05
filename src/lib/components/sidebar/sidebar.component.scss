@@ -2,8 +2,8 @@ cp-sidebar {
   display: block;
   height: 100%;
   box-shadow: 1px 2px 15px rgba(0, 0, 0, 0.08);
+  background-color: #FFFFFF;
 }
-
 
 /*
  * ng-capsule9
@@ -55,5 +55,53 @@ cp-sidebar {
 
   > .menu > .menu-list > cp-menu-item > .menu-list {
     background: #292929;
+  }
+}
+
+/*
+ * Minified Theme
+ */
+
+cp-sidebar.minified  {
+  width: 90px;
+  background-color: #424242;
+
+  .brand {
+    display: none;
+  }
+  > cp-menu.menu {
+    > cp-menu-item {
+      &.expand > cp-menu-list{
+        display: block;
+        left: 90px;
+      }
+    }
+    > cp-menu-label,
+    > cp-menu-item > a > cp-menu-label{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      font-size: 0.6em;
+      background-color: #424242;
+      color: #f2f2f2;
+      cp-icon {
+        font-size: 2.5em;
+        margin-bottom: 10px;
+      }
+    }
+    > cp-menu-item > cp-menu-list{
+      transition: all 0.6s ease-in-out;
+      z-index: -100;
+      top: 0;
+      left: -110px;
+      background: white;
+      width: 200px;
+      height: 100vh;
+      max-height: 100vh;
+      box-shadow: 1px 2px 15px rgba(0, 0, 0, 0.08);
+      display: block;
+      position: absolute;
+    }
   }
 }

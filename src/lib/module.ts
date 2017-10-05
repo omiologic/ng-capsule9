@@ -4,13 +4,15 @@ import {ColumnModule} from './components/column/column.module';
 import {SidebarModule} from './components/sidebar/sidebar.module';
 import {TabsetModule} from './components/tabset/tabset.module';
 import {ModalModule} from './components/modal/modal.module';
+import {IconModule} from './components/icon/icon.module';
 
 const UI_MODULES = [
   MenuModule,
   ColumnModule,
   SidebarModule,
   TabsetModule,
-  ModalModule
+  ModalModule,
+  IconModule
 ];
 
 @NgModule({
