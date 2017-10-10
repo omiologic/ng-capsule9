@@ -19,7 +19,7 @@ import {Component, ViewEncapsulation} from '@angular/core';
           </p>
           <h1 id="capsule-9" class="title">CAPSULE 9</h1>
           <h2 id="modern-framework" class="subtitle">
-            An <strong>elegant</strong> User Interface Suite based on <strong>Angular 4 +</strong> & <strong>Bulma</strong>
+            An <strong>elegant</strong> User Interface Suite based on <strong>Angular 4</strong> & <strong>Bulma</strong>
           </h2>
           <pre id="npm"><code>npm install ng-capsule9</code></pre>
           <div id="ghbtns" class="block">
@@ -39,7 +39,7 @@ import {Component, ViewEncapsulation} from '@angular/core';
               <span>Download</span>
               <small>v0.0.1</small>
             </a>
-            <a class="button is-large" routerLink="/documentation/overview/start/">
+            <a class="button is-large" routerLink="/documentation/start/">
               View docs
             </a>
           </p>
