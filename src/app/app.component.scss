@@ -2,8 +2,15 @@
  * Default app layout
  */
 
+.app-header {
+  z-index: 200;
+}
 .app-nav {
   z-index: 100;
+}
+
+.app-content {
+  height: calc(100vh - 52px);
 }
 
 
@@ -15,6 +22,10 @@
   .app-nav,
   .app-content {
     height: 100vh;
+  }
+
+  .app-content {
+    height: calc(100vh - 52px);
     padding: 20px;
   }
 }

@@ -8,7 +8,8 @@ import {
 
 export const DemoColumnRoutes = RouterModule.forChild([
   {
-    path: 'modules/menu',
+    path: 'column',
+    // pathMatch: 'full',
     component: DemoColumnComponent,
     children: [
       { path: '', redirectTo: 'overview', pathMatch: 'full' },
@@ -16,5 +17,5 @@ export const DemoColumnRoutes = RouterModule.forChild([
       { path: 'api', component: DemoColumnAPIComponent },
       { path: 'example', component: DemoColumnExampleComponent },
     ]
-  },
+  }
 ])

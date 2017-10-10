@@ -7,7 +7,7 @@ describe('NgCapsule9 App', () => {
     page = new NgCapsule9Page();
   });
 
-  it('should display message saying app works', () => {
+  it('should display message saying layout works', () => {
     page.navigateTo();
   });
 });

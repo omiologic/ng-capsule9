@@ -1,3 +1,11 @@
 markdown-viewer {
   display: block;
 }
+
+.markdown-content {
+
+  ul > li,
+  ol > li {
+    display: list-item;
+  }
+}

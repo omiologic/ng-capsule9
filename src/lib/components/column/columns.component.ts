@@ -21,7 +21,7 @@ export class ColumnsComponent {
   @HostBinding('class.is-mobile') private _isMobile: boolean;
   @HostBinding('class.is-desktop') private _isDesktop: boolean;
   @HostBinding('class.is-multiline') private _isMultiline: boolean;
-  @HostBinding('class.is-grid') private _isGrid: boolean;
+  @HostBinding('class.is-layout') private _isGrid: boolean;
   @HostBinding('class.is-gapless') private _isGapless: boolean;
 
   @Input()

@@ -5,20 +5,11 @@ import {TabsetComponent} from '../../../../lib/components/tabset/tabset.componen
 @Component({
   selector: 'demo-doc-viewer',
   template: `
-    <h1>{{name}}</h1>
+    <h1 *ngIf="label">{{label}}</h1>
+    <h2 *ngIf="description">{{description}}</h2>
     <cp-tabset #tabset (tabChange)="beforeChange($event)">
-      <cp-tab title="Overview">
-        <ng-template ngbTabContent>
-          <router-outlet></router-outlet>
-        </ng-template>
-      </cp-tab>
-      <cp-tab title="API">
-        <ng-template ngbTabContent>
-          <router-outlet></router-outlet>
-        </ng-template>
-      </cp-tab>
-      <cp-tab title="Example">
-        <ng-template ngbTabContent>
+      <cp-tab *ngFor="let item of routes" [id]="item.path" [title]="item.title" >
+        <ng-template tab-content>
           <router-outlet></router-outlet>
         </ng-template>
       </cp-tab>
@@ -30,8 +21,11 @@ import {TabsetComponent} from '../../../../lib/components/tabset/tabset.componen
 
 export class DocViewerComponent implements AfterViewInit {
   @ViewChild('tabset') tabset: TabsetComponent;
-  @Input() name: string;
+  @Input() label: string;
+  @Input() description: string;
   @Input() route: string;
+
+  @Input() routes: {path: string, title: string}[];
 
   public activeId: string;
 
@@ -52,7 +46,7 @@ export class DocViewerComponent implements AfterViewInit {
     const tabRoute = pathArr.pop();
     console.log(tabRoute, this.tabset, e.nextId);
     if (tabRoute !== e.nextId) {
-      return this._router.navigate(['modules', this.route, e.nextId])
+      return this._router.navigate(['documentation', this.route, e.nextId])
     }
   }
 }

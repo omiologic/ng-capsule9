@@ -9,6 +9,8 @@
       "root": "src/app",
       "outDir": "dist",
       "assets": [
+        { "glob": "*", "input": "../assets/wiki", "output": "./assets/wiki/" },
+        { "glob": "**/examples/*", "input": "../lib/", "output": "./assets/wiki/" },
         { "glob": "**/*.md", "input": "../lib/", "output": "./assets/wiki/" },
         { "glob": "README.md", "input": "../../", "output": "./assets/wiki/" },
         { "glob": "**/*", "input": "../assets/img", "output": "./assets/img" }

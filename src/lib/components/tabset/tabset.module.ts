@@ -13,7 +13,7 @@ import {TabComponent, TabContentDirective, TabsetComponent, TabTitleDirective} f
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
   ],
   exports: [
     TabComponent,

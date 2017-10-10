@@ -6,6 +6,6 @@ export class NgCapsule9Page {
   }
 
   getParagraphText() {
-    return element(by.css('app-root h1')).getText();
+    return element(by.css('layout-root h1')).getText();
   }
 }

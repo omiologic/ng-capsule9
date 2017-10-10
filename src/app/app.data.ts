@@ -1,48 +1,35 @@
-export const appSidebar = [
+export const DOCUMENTATION_SIDEBAR = [
   {
-    label: { text: 'Guide', icon: 'book' },
-    list: [
-      {
-        label: { text: 'Quickstart', link: 'quickstart'}
-      }
-    ]
+    label: { text: 'Quickstart', icon: 'book', link: 'documentation/start' }
   },
   {
     label: { text: 'Modules', icon: 'cubes' },
     list: [
       {
-        label: { text: 'Navigation' },
+        label: { text: 'Forms & Inputs'},
         list: [
           {
-            label: { text: 'Sidebar', link: 'module/sidebar' }
-          },
-          {
-            label: { text: 'Menu', link: 'module/menu' }
-          },
-          {
-            label: { text: 'Tabs', link: 'module/tabs' }
+            label: { text: 'Checkbox', link: 'documentation/checkbox'}
           }
         ]
       },
       {
-        label: { text: 'Grid' },
+        label: { text: 'Grid & Layout'},
         list: [
           {
-            label: { text: 'Column', link: 'module/column' }
-          },
-          {
-            label: { text: 'Tile', link: 'module/Tile' }
+            label: { text: 'Column', link: 'documentation/column'}
           }
         ]
       },
       {
-        label: { text: 'Notification & Panel' },
+        label: { text: 'Elements'},
         list: [
           {
-            label: { text: 'Modal', link: 'module/modal' }
+            label: { text: 'Button', link: 'documentation/button'}
           }
         ]
       }
     ]
   }
 ];
+

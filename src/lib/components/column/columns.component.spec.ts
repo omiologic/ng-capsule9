@@ -30,7 +30,7 @@ describe('ColumnsComponent', () => {
       { class: 'is-mobile', option: 'mobile' },
       { class: 'is-desktop', option: 'desktop' },
       { class: 'is-multiline', option: 'multiline' },
-      { class: 'is-grid', option: 'grid' },
+      { class: 'is-layout', option: 'grid' },
       { class: 'is-gapless', option: 'gapless' },
     ];
     for (let i = 0; i < testCases.length; i++) {

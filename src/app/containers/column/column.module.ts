@@ -6,6 +6,10 @@ import {
   DemoColumnExampleComponent,
   DemoColumnOverviewComponent
 } from './column.component';
+import {ViewerModule} from '../../components/viewer/viewer.module';
+import {ColumnModule} from '../../../lib/components/column/column.module';
+import {CommonModule} from '@angular/common';
+import {MarkdownToHtmlModule} from 'ng2-markdown-to-html';
 
 const COMPONENTS = [
   DemoColumnComponent,
@@ -16,7 +20,9 @@ const COMPONENTS = [
 @NgModule({
   declarations: COMPONENTS,
   imports: [
-    DemoColumnRoutes
+    ViewerModule,
+    ColumnModule,
+    CommonModule
   ],
   exports: COMPONENTS
 })

@@ -7,6 +7,7 @@ import {CommonModule} from '@angular/common';
 import {RouterModule} from '@angular/router';
 import {TabsetModule} from '../../../lib/components/tabset/tabset.module';
 import {IconModule} from '../../../lib/components/icon/icon.module';
+import { MarkdownToHtmlModule } from 'ng2-markdown-to-html';
 
 const VIEWER_COMPONENTS = [
   MarkdownViewerComponent,
