@@ -59,6 +59,7 @@ export class HasSubDirective implements AfterContentInit {
 
   @HostListener('click')
   onClick(): boolean {
+    // console.log('HasSubDirective : onClick', this.isExpanded);
     if (this.isExpanded) {
       this.expandable.emitChange({});
     } else {
@@ -81,9 +82,10 @@ export class HasSubDirective implements AfterContentInit {
   }
 
   update(): void {
-    if (!this.linksWithHrefs || !this.router.navigated) {
-      return;
-    }
+    // if (!this.linksWithHrefs || !this.router.navigated) {
+    //   return;
+    // }
+    // console.log('HasSubDirective : update', this)
     const hasActiveLinks = this.hasActiveLinks();
     this.isExpanded = hasActiveLinks;
   }
@@ -92,7 +94,7 @@ export class HasSubDirective implements AfterContentInit {
     this.linksWithHrefs.changes.subscribe(activeRoute => {
       this.update();
     });
-    this.update();
+    // this.update();
   }
 }
 
@@ -115,11 +117,14 @@ export class ExpandableDirective implements OnInit, OnDestroy {
   ngOnInit() {
     this.expandedList$ = this.expandable.changeEmitted$
       .subscribe(expandedList => {
+        // console.log('expandedList', expandedList);
         this.nestedItems.map(item => {
           if (item.itemName === expandedList.itemName) {
+            // console.log('this.nestedItems.map ROOT', item.itemName , expandedList.itemName, item);
             item.isExpanded = true;
           } else {
             if (item.isExpanded && item.parentName && expandedList.itemName === item.parentName) {
+              // console.log('this.nestedItems.map CHILDREN', item.itemName , expandedList.itemName, item);
               item.isExpanded = true;
             } else {
               item.isExpanded = false;

@@ -9,6 +9,13 @@ cp-sidebar {
  * ng-capsule9
  */
 cp-sidebar {
+  transition: width 0.3s ease-in;
+  width: 0 !important;
+  overflow: hidden;
+  &.opened {
+    width: 250px !important;
+  }
+
   .brand {
     padding: 0.5em;
   }

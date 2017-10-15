@@ -6,10 +6,14 @@ import {
 } from '@angular/core';
 import {MarkdownService} from 'angular2-markdown';
 
+// https://github.com/chjj/marked/
+// https://github.com/dimpu/angular2-markdown
+
 @Component({
   selector: 'demo-md-viewer, markdown-viewer',
   template: `<div Markdown [path]="path" class="markdown-content"></div>`,
   styleUrls: ['./markdown-viewer.component.scss'],
+  providers: [MarkdownService],
   encapsulation: ViewEncapsulation.None
 })
 
@@ -30,7 +34,7 @@ export class MarkdownViewerComponent implements OnInit {
         }
         return url;
       }
-      const repoURL = 'https://github.com/milocosmopolitan/angular-uix';
+      const repoURL = 'https://github.com/omiologic/ng-capsule9';
       const link = href.includes(repoURL)
         ? marddownUrlToRouteUrl(href.replace(repoURL, '/'))
         : href;
@@ -45,11 +49,30 @@ export class MarkdownViewerComponent implements OnInit {
         <table class="table">
           <thead>${header}</thead>
           <tbody>${body}</tbody>
-        </table>`
+        </table>`;
     }
   }
+
+  renderList() {
+    this._markdown.renderer.list = (text: string, ordered: boolean) => {
+      console.log('renderList', text, ordered)
+      return ordered
+        ? `<ol class="ordered" type="1">${text}</ol>`
+        : `<ul>${text}</ul>`;
+    }
+  }
+
+  renderListItem() {
+    this._markdown.renderer.listitem = (text: string) => {
+      console.log('renderListItem', text)
+      return `<li>${text}</li>`;
+    }
+  }
+
   ngOnInit() {
     this.renderLinks();
     this.renderTable();
+    this.renderList();
+    this.renderListItem();
   }
 }
