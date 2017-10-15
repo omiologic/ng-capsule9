@@ -1,6 +1,5 @@
 /* AjaxItem Module exports */
 export * from './ajax-item/ajax-item.module';
-// Todo: add Ajax prefix
 export * from './ajax-item/ajax-item.actions';
 export * from './ajax-item/ajax-item.epics';
 export * from './ajax-item/ajax-item.service';
