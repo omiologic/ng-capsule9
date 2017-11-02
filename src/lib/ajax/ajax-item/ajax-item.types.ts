@@ -4,3 +4,7 @@ export interface AjaxItem {
   itemType: string;
   loading: boolean;
 }
+
+export interface AjaxItemOptions {
+  urls: string[];
+}

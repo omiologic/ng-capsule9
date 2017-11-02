@@ -6,34 +6,34 @@ export class AjaxListActions {
   static readonly LOAD_SUCCEEDED = 'LOAD_SUCCEEDED';
   static readonly LOAD_FAILED = 'LOAD_FAILED';
 
-  loadItem(itemType, params = {}) {
+  loadList(listType, params = {}) {
     return {
       type: AjaxListActions.LOAD_STARTED,
-      meta: { itemType },
+      meta: { listType },
       params
     };
   }
 
-  loadSucceeded(itemType, payload) {
+  loadSucceeded(listType, payload) {
     return {
       type: AjaxListActions.LOAD_SUCCEEDED,
-      meta: { itemType },
+      meta: { listType },
       payload,
     };
   }
 
-  loadFailed(itemType, error) {
+  loadFailed(listType, error) {
     return {
       type: AjaxListActions.LOAD_FAILED,
-      meta: { itemType },
+      meta: { listType },
       error,
     };
   }
 
-  submitForm(itemType, form) {
+  submitForm(listType, form) {
     return {
       type: AjaxListActions.LOAD_STARTED,
-      meta: { itemType },
+      meta: { listType },
       form
     };
   }

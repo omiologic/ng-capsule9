@@ -1,6 +1,7 @@
 import { AjaxItemActions } from './ajax-item.actions';
 import { IPayloadAction } from '../payload.types';
 import { AjaxItem } from './ajax-item.types';
+import {OpaqueToken} from '@angular/core';
 
 const INITIAL_STATE: AjaxItem = {
   error: null,
@@ -15,7 +16,7 @@ export function createItemReducer(itemType: string) {
   return function itemReducer(state: AjaxItem = INITIAL_STATE,
                               action: IPayloadAction<AjaxItem, any>): AjaxItem {
 
-    if (!action.meta || action.meta.itemType !== itemType) {
+    if ((!action.meta || action.meta.itemType !== itemType) && !(action.type === 'LOG_OUT')) {
       return state;
     }
 
@@ -41,7 +42,13 @@ export function createItemReducer(itemType: string) {
           itemType: null,
           loading: false,
         };
-
+      case 'LOG_OUT':
+        return {
+          error: null,
+          item: null,
+          itemType: null,
+          loading: false,
+        };
     }
 
     return state;
