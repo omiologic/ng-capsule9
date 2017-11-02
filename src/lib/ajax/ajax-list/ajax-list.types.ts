@@ -4,3 +4,7 @@ export interface AjaxList {
   listType: string;
   loading: boolean;
 }
+
+export interface AjaxListOptions {
+  urls: string[];
+}

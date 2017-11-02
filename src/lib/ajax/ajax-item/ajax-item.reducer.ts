@@ -1,6 +1,7 @@
 import { AjaxItemActions } from './ajax-item.actions';
 import { IPayloadAction } from '../payload.types';
 import { AjaxItem } from './ajax-item.types';
+import {OpaqueToken} from '@angular/core';
 
 const INITIAL_STATE: AjaxItem = {
   error: null,
