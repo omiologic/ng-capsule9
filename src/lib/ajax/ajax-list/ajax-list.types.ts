@@ -6,5 +6,5 @@ export interface AjaxList {
 }
 
 export interface AjaxListOptions {
-  urls: string[];
+  urls: any;
 }
