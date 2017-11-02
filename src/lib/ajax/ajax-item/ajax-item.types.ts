@@ -6,5 +6,5 @@ export interface AjaxItem {
 }
 
 export interface AjaxItemOptions {
-  urls: string[];
+  urls: any;
 }
