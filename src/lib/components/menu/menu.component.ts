@@ -24,7 +24,10 @@ export class MenuLabelComponent {
 
 @Component({
   selector: 'cp-menu-list',
-  template: `<ng-content select="cp-menu-item"></ng-content>`,
+  template: `
+    <ng-content select="cp-menu-item"></ng-content>
+    <ng-content select="ng-container"></ng-content>
+  `,
   encapsulation: ViewEncapsulation.None
 })
 

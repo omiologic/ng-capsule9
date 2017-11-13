@@ -1,7 +1,8 @@
 import {
   AfterContentChecked,
-  AfterViewChecked, Component, ContentChild, ContentChildren, Directive, EventEmitter, HostBinding, Input, Output,
-  QueryList,
+  AfterViewChecked, Component, ContentChild, ContentChildren, Directive, EventEmitter, HostBinding, Input, OnChanges,
+  Output,
+  QueryList, SimpleChange, SimpleChanges,
   TemplateRef, ViewEncapsulation
 } from '@angular/core';
 
@@ -43,15 +44,14 @@ export class TabComponent {
 @Component({
   selector: 'cp-tabset',
   template: `
-    <ul>
+    <ul [ngClass]="{'panel-tabs': _isPanelTab}">
       <li *ngFor="let tab of tabs"
-          [ngClass]="{'is-active': tab.id === activeId}">
-        <a [id]="tab.id"
-           [class.disabled]="tab.disabled"
-           (click)="select(tab.id)">
-          {{tab.title}}
-          <ng-template [ngTemplateOutlet]="tab.tabTitle?.templateRef"></ng-template>
-        </a>
+          [ngClass]="{'is-active': tab.id === activeId}"
+          [id]="tab.id"
+          [class.disabled]="tab.disabled"
+          (click)="select(tab.id)">
+        {{tab.title}}
+        <ng-template [ngTemplateOutlet]="tab.tabTitle?.templateRef"></ng-template>
       </li>
     </ul>
     <div class="tab-content">
@@ -66,9 +66,22 @@ export class TabComponent {
   styleUrls: ['./tabset.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class TabsetComponent implements AfterContentChecked {
+export class TabsetComponent implements OnChanges {
+
+  private _isPanelTab = false;
 
   @HostBinding('class.tabs') private _isTab = true;
+  // @HostBinding('class.panel-tabs')
+  @Input() set panelTab(val: boolean) {
+    this._isPanelTab = val;
+    // if (this._isPanelTab) {
+    //   this._isTab = false;
+    // }
+  }
+  get panelTab() {
+    return this._isPanelTab;
+  }
+
 
   @ContentChildren(TabComponent) tabs: QueryList<TabComponent>;
   @Input() activeId: string;
@@ -88,9 +101,9 @@ export class TabsetComponent implements AfterContentChecked {
       const defaultPrevented = false;
 
       this.tabChange.emit({
-          activeId: this.activeId,
-          nextId: selectedTab.id
-        });
+        activeId: this.activeId,
+        nextId: selectedTab.id
+      });
 
       if (!defaultPrevented) {
         this.activeId = selectedTab.id;
@@ -98,11 +111,12 @@ export class TabsetComponent implements AfterContentChecked {
     }
   }
 
-  ngAfterContentChecked() {
-    const activeTab = this._getTabById(this.activeId);
-    this.activeId = activeTab ? activeTab.id : (this.tabs.length ? this.tabs.first.id : null);
-
-    // console.log('ngAfterContentChecked', this.activeId, this.tabs);
+  ngOnChanges(changes: SimpleChanges) {
+    const activeIdChanges: SimpleChange = changes['activeId'];
+    if (activeIdChanges) {
+      const activeTab = this._getTabById(activeIdChanges.currentValue);
+      this.activeId = activeTab ? activeTab.id : (this.tabs.length ? this.tabs.first.id : null);
+    }
   }
 
   private _getTabById(id: string): TabComponent {
