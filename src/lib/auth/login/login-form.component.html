@@ -1,0 +1,59 @@
+<!-- begin login-content -->
+<div class="login-content">
+  <div *ngIf="tokenError$ | async" class="notification is-danger">
+    There was a problem with your login request.  Please try again.
+  </div>
+  <form [formGroup]="loginForm" (ngSubmit)="submitForm(loginForm.value)">
+    <div class="field">
+      <div class="control has-icons-left has-icons-right"
+           [ngClass]="{'has-error':!loginForm.controls['email'].valid && loginForm.controls['email'].touched}">
+        <input type="email"
+               class="input"
+               placeholder="Email Address"
+               [ngClass]="{
+                'is-danger': loginForm.controls['email'].hasError('required') && loginForm.controls['email'].touched
+               }"
+               [formControl]="loginForm.controls['email']"/>
+        <span class="icon is-small is-left">
+          <i class="fa fa-envelope"></i>
+        </span>
+        <span class="icon is-small is-right">
+          <i class="fa fa-check"></i>
+        </span>
+        <div *ngIf="loginForm.controls['email'].hasError('required') && loginForm.controls['email'].touched"
+             class="notification is-danger">You must add an email.</div>
+      </div>
+    </div>
+    <div class="field">
+      <div class="control has-icons-left"
+           [ngClass]="{'has-error':!loginForm.controls['password'].valid && loginForm.controls['password'].touched}">
+        <input type="password"
+               class="input"
+               placeholder="Password"
+               [formControl]="loginForm.controls['password']"/>
+        <span class="icon is-small is-left">
+          <i class="fa fa-lock"></i>
+        </span>
+        <div *ngIf="loginForm.controls['password'].hasError('required') && loginForm.controls['password'].touched"
+             class="notification is-danger">You must add a password.</div>
+      </div>
+    </div>
+    <div class="field">
+      <label class="checkbox">
+        <input type="checkbox" /> Remember Me
+      </label>
+    </div>
+    <div class="login-buttons">
+      <button type="submit" class="button is-primary"
+              [disabled]="!loginForm.valid">Sign me in</button>
+    </div>
+    <div>
+      Forgot password? Click <a routerLink="/admin" class="text-success">here</a> for assistance.
+    </div>
+    <hr />
+    <p class="text-center text-inverse">
+      &copy; Copyright 2017, Omiologic LLC
+    </p>
+  </form>
+</div>
+<!-- end login-content -->

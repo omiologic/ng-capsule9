@@ -28,6 +28,7 @@
     "@angular/platform-browser": "^4.4.4",
     "@angular/platform-browser-dynamic": "^4.4.4",
     "@angular/router": "^4.4.4",
+    "angular2-jwt": "^0.2.3",
     "angular2-markdown": "^1.6.0",
     "bulma": "^0.4.4",
     "capsule9": "git+https://github.com/omiologic/capsule9.git",
