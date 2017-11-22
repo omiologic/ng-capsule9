@@ -1,4 +1,7 @@
 /* AjaxItem Module exports */
+export * from './payload.types';
+export * from './ajax.module';
+
 export * from './ajax-item/ajax-item.module';
 export * from './ajax-item/ajax-item.actions';
 export * from './ajax-item/ajax-item.epics';
