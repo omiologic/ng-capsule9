@@ -1,7 +1,7 @@
 import { AjaxItemActions } from '../../../ajax/src/ajax-item/ajax-item.actions';
 import { AUTH_TYPES } from '../auth.type';
 // -------------------------------------------------------------------
-// TOKEN STORE
+// TOKEN STORE : not being used still in development
 // -------------------------------------------------------------------
 export const TokenReducer = (state = null, {type, payload}) => {
   let token;

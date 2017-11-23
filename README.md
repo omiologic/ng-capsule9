@@ -1,8 +1,22 @@
-# ng-capsule9
+# Capsule9
+
+this is source repository of `@capsule9/*` packages
 
 ## Introduction
 
-ng-capsule9 is angular 4 ui component based on [Bulma](https://github.com/jgthms/bulma).
+Inspired by Angular, this framework is built to provide all kinds of goodies for building web applications.
+It is powered with [Bulma](https://github.com/jgthms/bulma) css framework to provide rich styles with flex box.
+
+## Developing Libraries
+
+
+| Command | Description | Status |
+| --- | --- | --- |
+| `@capsule9/ajax` | Provide easy ajax handling with redux | in-progress |
+| `@capsule9/auth` | Provide jwt strategy authentication with forms | in-progress |
+| `@capsule9/design` | Provide UI component | in-progress |
+| `@capsule9/cli` | Generator to spin up new @capsule project | future release |
+
 
 ## Getting Started
 

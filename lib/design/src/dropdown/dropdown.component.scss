@@ -1,0 +1,9 @@
+cp-dropdown-trigger {
+  display: block;
+  >button {
+    z-index: 100;
+    >span {
+      z-index: -100;
+    }
+  }
+}

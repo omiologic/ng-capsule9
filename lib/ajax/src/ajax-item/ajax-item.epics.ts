@@ -1,4 +1,4 @@
-import {Injectable, OpaqueToken} from '@angular/core';
+import {Injectable} from '@angular/core';
 import {createEpicMiddleware, EpicMiddleware} from 'redux-observable';
 import {of} from 'rxjs/observable/of';
 import 'rxjs/add/operator/catch';

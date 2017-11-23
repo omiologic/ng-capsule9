@@ -6,10 +6,11 @@ const fs = require('fs-extra');
 const rootPkg = require('../package.json');
 
 const VERSION = rootPkg.version;
-const PACKAGE = `@capsule`;
+const PACKAGE = `@capsule9`;
 const PACKAGES = [
   'ajax',
-  'auth'
+  'auth',
+  'design'
 ];
 const NPM_DIR = `dist`;
 
@@ -54,19 +55,27 @@ Promise.all(PACKAGES.map((pkg) => {
       shell.echo(`Rollup package ${pkg}`);
       if (shell.exec(`rollup -c ./rollup.es.config.js ` +
           `-i ${NPM_DIR}/packages/${pkg}/${pkg}.js ` +
-          `-o ${NPM_DIR}/packages/${pkg}/esm5/${pkg}.js`
+          `-o ${NPM_DIR}/packages/${pkg}/esm2015/${pkg}.js`
         ).code !== 0) {
         reject(new Error(`Error: Rollup package failed`));
       }
 
       shell.echo(`Produce ESM5 version`);
-      shell.exec(`ngc -p ./lib/${pkg}/tsconfig-build.json --target es5 -d false ` +
-        `--outDir ${NPM_DIR}/packages/${pkg}/esm5/${pkg}.js --importHelpers true --sourceMap`);
+      shell.exec(`tsc -p ./lib/${pkg}/tsconfig-build.json --target es5 -d false ` +
+        `--outDir ${NPM_DIR}/es5/ --importHelpers true --sourceMap`);
+
+      if (shell.exec(`rollup -c ./rollup.es.config.js ` +
+          `-i ${NPM_DIR}/es5/${pkg}/${pkg}.js ` +
+          `-o ${NPM_DIR}/packages/${pkg}/esm5/${pkg}.js`
+        ).code !== 0) {
+        shell.echo(chalk.red(`Error: ESM5 version failed`));
+        shell.exit(1);
+      }
 
       shell.echo(`Run Rollup conversion on package`);
       if (shell.exec(`rollup -c ./lib/${pkg}/rollup.config.js ` +
           `-i ${NPM_DIR}/packages/${pkg}/esm5/${pkg}.js ` +
-          `-o ${NPM_DIR}/packages/${pkg}/bundle/${pkg}.umd.js`
+          `-o ${NPM_DIR}/packages/${pkg}/bundles/${pkg}.umd.js`
         ).code !== 0) {
         reject(new Error(`Error: Rollup conversion failed`));
         // shell.echo(chalk.red(`Error: Rollup conversion failed`));
@@ -113,7 +122,7 @@ Promise.all(PACKAGES.map((pkg) => {
       shell.echo(chalk.green(`Updating devDependencies version according to root package.json`));
       Object.keys(newPkg.dependencies).forEach(key => {
 
-        if (key.includes('@capsule9/')) {
+        if (key.includes(`${PACKAGE}/`)) {
           newPkg.devDependencies[key] = VERSION;
         } else {
           newPkg.devDependencies[key] = rootPkg.dependencies[key]
@@ -167,5 +176,18 @@ Promise.all(PACKAGES.map((pkg) => {
     return newPkg;
   }).then((newPkgObj) => {
     return fs.writeJson(`./${NPM_DIR}/packages/${pkg}/package.json`, newPkgObj, { spaces: '\t' })
-  }).catch(console.error)
+  }).then(() => {
+    shell.cd('dist');
+    shell.cd('packages');
+    shell.cd(pkg);
+    shell.cd('bundles');
+    console.log(shell.ls());
+    return shell.exec(`uglifyjs ${pkg}.umd.js -c --comments -o ${pkg}.umd.min.js --source-map "filename='${pkg}.umd.min.js.map', includeSources"`);
+  }).then(() => {
+    shell.cd('..');
+    shell.cd('..');
+    shell.cd('..');
+    shell.cd('..');
+    return;
+  }).catch(console.error);
 }));

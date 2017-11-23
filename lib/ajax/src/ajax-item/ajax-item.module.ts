@@ -1,14 +1,13 @@
-import {ModuleWithProviders, NgModule} from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { ModuleWithProviders, NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 
 import { AjaxItemActions } from './ajax-item.actions';
 import { AjaxItemEpics } from './ajax-item.epics';
 import { AjaxItemService, AJAX_ITEM_API_URLS } from './ajax-item.service';
-import {AjaxItemOptions} from './ajax-item.types';
+import { AjaxItemOptions } from './ajax-item.types';
 
 @NgModule({
-  imports: [CommonModule, HttpModule],
+  imports: [HttpModule],
   providers: [AjaxItemActions, AjaxItemEpics, AjaxItemService],
 })
 export class AjaxItemModule {

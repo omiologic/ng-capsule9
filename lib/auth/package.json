@@ -9,6 +9,8 @@
   "author": "omiologic",
   "license": "MIT",
   "dependencies": {
+    "tslib": "0.0.0-PLACEHOLDER",
+    "@capsule9/ajax": "0.0.0-PLACEHOLDER",
     "@angular-redux/store": "0.0.0-PLACEHOLDER",
     "angular2-jwt": "0.0.0-PLACEHOLDER"
   },
@@ -18,11 +20,17 @@
     "@angular/router": "0.0.0-PLACEHOLDER",
     "@angular/forms": "0.0.0-PLACEHOLDER",
     "@angular/http": "0.0.0-PLACEHOLDER",
-    "@capsule9/ajax": "0.0.0-PLACEHOLDER",
     "rxjs": "^5.4.3"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/omiologic/capsule.git"
+    "url": "git+https://github.com/omiologic/ng-capsule9.git"
+  },
+  "bugs": {
+    "url": "https://github.com/omiologic/ng-capsule9/issues"
+  },
+  "homepage": "https://github.com/omiologic/ng-capsule9#readme",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   }
 }

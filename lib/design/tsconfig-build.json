@@ -1,0 +1,26 @@
+{
+  "extends": "../tsconfig-build.json",
+
+  "compilerOptions": {
+    "baseUrl": "../",
+    "rootDir": "../",
+    "paths": {
+      "rxjs/*": ["../node_modules/rxjs/*"],
+      "@angular/*": ["../node_modules/@angular/*"]
+    },
+    "outDir": "../../dist/packages"
+  },
+
+  "files": [
+    "./design.ts"
+  ],
+
+  "angularCompilerOptions": {
+    "annotateForClosureCompiler": true,
+    "strictMetadataEmit": false,
+    "skipTemplateCodegen": true,
+    "flatModuleOutFile": "design.js",
+    "flatModuleId": "@capsule9/design"
+  }
+}
+

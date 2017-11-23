@@ -1,19 +1,15 @@
-import {ModuleWithProviders, NgModule} from '@angular/core';
+import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HttpModule } from '@angular/http';
+import { RouterModule } from '@angular/router';
+import { NgReduxModule } from '@angular-redux/store';
+import { ReactiveFormsModule } from '@angular/forms';
+import { AjaxItemModule } from '@capsule9/ajax';
 import { LogoutButtonDirective } from './auth.directive';
 import { LoginFormComponent } from './login/login-form.component';
-import { AjaxItemModule } from '../../ajax/src/ajax-item/ajax-item.module';
-import {NgReduxModule} from '@angular-redux/store';
-import {ReactiveFormsModule} from '@angular/forms';
-import {RouterModule} from '@angular/router';
-import {AuthService} from './auth.service';
-import {AuthGuardService} from './auth.guard.service';
-import {AuthConfig, AuthHttp, JwtHelper} from 'angular2-jwt';
-import {Http, HttpModule, RequestOptions} from '@angular/http';
-
-// export function authHttpServiceFactory(http: Http, options: RequestOptions) {
-//   return new AuthHttp(new AuthConfig(), http, options);
-// }
+import { AuthService } from './auth.service';
+import { AuthGuardService } from './auth.guard.service';
+import { JwtHelper } from 'angular2-jwt';
 
 const AUTH_MODULE_EXPORTS = [
   LogoutButtonDirective,

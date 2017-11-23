@@ -4,6 +4,7 @@ import license from 'rollup-plugin-license';
 
 const path = require('path');
 
+console.log('path', path.join(__dirname, 'license-banner.txt'));
 export default {
   output: {
     format: 'es',
@@ -18,7 +19,7 @@ export default {
       sourceMap: true,
 
       banner: {
-        file: path.join(__dirname, 'license-banner.txt'),
+        file: path.join(__dirname, 'lib', 'license-banner.txt'),
         encoding: 'utf-8',
       }
     })

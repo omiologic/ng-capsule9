@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs/Subject';
+import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class ExpandableService {
   private emitChangeSource = new Subject<any>();
-  changeEmitted$ = this.emitChangeSource.asObservable();
+  changeEmitted$: Observable<any> = this.emitChangeSource.asObservable();
 
   constructor() { }
 
