@@ -2,7 +2,7 @@ import {ModuleWithProviders, NgModule} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LogoutButtonDirective } from './auth.directive';
 import { LoginFormComponent } from './login/login-form.component';
-import { AjaxItemModule } from '../ajax/ajax-item/ajax-item.module';
+import { AjaxItemModule } from '../../ajax/src/ajax-item/ajax-item.module';
 import {NgReduxModule} from '@angular-redux/store';
 import {ReactiveFormsModule} from '@angular/forms';
 import {RouterModule} from '@angular/router';

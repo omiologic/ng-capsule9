@@ -1,7 +1,7 @@
 export interface AjaxList {
   error: any;
-  list: any[];
-  listType: string;
+  list: any[] | null;
+  listType: string | null;
   loading: boolean;
 }
 

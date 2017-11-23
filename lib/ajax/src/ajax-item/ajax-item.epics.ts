@@ -1,26 +1,26 @@
-import {Injectable} from '@angular/core';
-import {/* Epic, */ createEpicMiddleware} from 'redux-observable';
+import {Injectable, OpaqueToken} from '@angular/core';
+import {createEpicMiddleware, EpicMiddleware} from 'redux-observable';
 import {of} from 'rxjs/observable/of';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 
-import {AjaxListActions} from './ajax-list.actions';
-import {AjaxListService} from './ajax-list.service';
+import {AjaxItemActions} from './ajax-item.actions';
+import {AjaxItemService} from './ajax-item.service';
 
 @Injectable()
-export class AjaxListEpics {
-  constructor(private service: AjaxListService,
-              private actions: AjaxListActions,
+export class AjaxItemEpics {
+  constructor(private service: AjaxItemService,
+              private actions: AjaxItemActions,
   ) {
   }
 
   /**
    *
-   * @param {string} listType
+   * @param {string} itemType
    * @returns {EpicMiddleware<any|any, S>}
    */
-  public createEpic(listType: string) {
-    return createEpicMiddleware(this.createLoadListEpic(listType));
+  public createEpic(itemType: string) {
+    return createEpicMiddleware(this.createLoadItemEpic(itemType));
   }
 
   /**
@@ -56,35 +56,35 @@ export class AjaxListEpics {
   /**
    *
    * @param {object} response
-   * @param {string} listType
+   * @param {string} itemType
    * @returns {(action$:any)=>Observable<R|T>}
    */
-  private loadFailed(response, listType) {
-    return of(this.actions.loadFailed(listType, {
+  private loadFailed(response, itemType) {
+    return of(this.actions.loadFailed(itemType, {
       status: '' + response.status,
     }))
   }
 
   /**
    *
-   * @param {string} listType
+   * @param {string} itemType
    * @returns {(action$:any)=>Observable<R|T>}
    */
-  private createLoadListEpic(listType) {
+  private createLoadItemEpic(itemType) {
     return action$ => action$
-      .ofType(AjaxListActions.LOAD_STARTED)
+      .ofType(AjaxItemActions.LOAD_STARTED)
       .filter(({meta}) => {
-        return meta.listType === listType
+        return meta.itemType === itemType
       })
       .switchMap(({form, params}) => {
         if (form) {
-          return this.service.post(listType, form)
-            .map(data => this.actions.loadSucceeded(listType, data))
-            .catch(response => this.loadFailed(response, listType))
+          return this.service.post(itemType, form)
+            .map(data => this.actions.loadSucceeded(itemType, data))
+            .catch(response => this.loadFailed(response, itemType))
         } else {
-          return this.service.get(listType, params)
-            .map(data => this.actions.loadSucceeded(listType, data))
-            .catch(response => this.loadFailed(response, listType))
+          return this.service.get(itemType, params)
+            .map(data => this.actions.loadSucceeded(itemType, data))
+            .catch(response => this.loadFailed(response, itemType))
         }
       })
   }

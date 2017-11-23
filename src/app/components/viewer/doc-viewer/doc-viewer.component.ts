@@ -1,7 +1,7 @@
 import {AfterViewInit, Component, Input, OnInit, ViewChild, ViewEncapsulation} from '@angular/core';
 import {Router} from '@angular/router';
 import {Location} from '@angular/common';
-import {TabsetComponent} from '../../../../lib/components/tabset/tabset.component';
+import {TabsetComponent} from '../../../../../lib/components/tabset/tabset.component';
 @Component({
   selector: 'demo-doc-viewer',
   template: `

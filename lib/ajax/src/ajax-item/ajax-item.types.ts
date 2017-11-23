@@ -1,7 +1,7 @@
 export interface AjaxItem {
   error: any;
   item: any;
-  itemType: string;
+  itemType: string | null;
   loading: boolean;
 }
 

@@ -7,7 +7,7 @@ import {
   DemoColumnOverviewComponent
 } from './column.component';
 import {ViewerModule} from '../../components/viewer/viewer.module';
-import {ColumnModule} from '../../../lib/components/column/column.module';
+import {ColumnModule} from '../../../../lib/components/column/column.module';
 import {CommonModule} from '@angular/common';
 import {MarkdownToHtmlModule} from 'ng2-markdown-to-html';
 

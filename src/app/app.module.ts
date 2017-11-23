@@ -10,7 +10,7 @@ import { HomeComponent } from './containers/home/home.component';
 import { NotFoundComponent } from './containers/not-found/not-found.component';
 
 import { MarkdownModule } from 'angular2-markdown';
-import { NgCapsule9Module } from '../lib/module';
+import { NgCapsule9Module } from '../../lib/module';
 import { DemoMenuComponent } from './containers/menu/menu.component';
 import {DemoTabsComponent} from './containers/tabs/tabs.component';
 import { DemoModalComponent } from './containers/modal/modal.component'

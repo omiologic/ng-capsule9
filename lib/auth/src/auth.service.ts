@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
 import {NgRedux, select} from '@angular-redux/store';
 
-import { AjaxItemActions } from '../ajax/ajax-item/ajax-item.actions';
+import { AjaxItemActions } from '@capsule9/ajax';
 import { AUTH_TYPES } from './auth.type';
 import { JwtHelper } from 'angular2-jwt';
 import {Observable} from 'rxjs/Observable';
+import {Subscription} from 'rxjs/Subscription';
 
 @Injectable()
 export class AuthService {
@@ -18,7 +19,7 @@ export class AuthService {
     private jwtHelper: JwtHelper
   ) {}
 
-  tokenSubscription(callback: (token: string) => void) {
+  tokenSubscription(callback: (token: string) => void): Subscription {
     return this.token$.subscribe(callback);
   }
 
@@ -38,7 +39,7 @@ export class AuthService {
     }
   }
 
-  get token(): string {
+  get token(): string | null {
     const cachedToken = JSON.parse(localStorage.getItem('reduxPersist:token'));
     console.log('get token()', cachedToken);
     return cachedToken && cachedToken.item ? cachedToken.item.token : null;

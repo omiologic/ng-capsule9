@@ -1,4 +1,4 @@
-import { AjaxItemActions } from '../../ajax/ajax-item/ajax-item.actions';
+import { AjaxItemActions } from '../../../ajax/src/ajax-item/ajax-item.actions';
 import { AUTH_TYPES } from '../auth.type';
 // -------------------------------------------------------------------
 // TOKEN STORE

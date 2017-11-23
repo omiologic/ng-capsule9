@@ -1,7 +1,8 @@
 import {Inject, Injectable, OpaqueToken} from '@angular/core';
 import {Headers, Http, RequestOptions, URLSearchParams} from '@angular/http';
 import 'rxjs/add/operator/map';
-import {AuthService} from '../../auth/auth.service';
+import {AuthService} from '@capsule9/auth';
+import {Observable} from 'rxjs/Observable';
 
 export const AJAX_ITEM_API_URLS = new OpaqueToken('ajax-item-service AJAX_ITEM_API_URLS');
 
@@ -13,7 +14,7 @@ export class AjaxItemService {
     private auth: AuthService
   ) {}
 
-  get(itemType: string, params: any) {
+  get(itemType: string, params: any): Observable<any> {
 
     const headers = new Headers()
     headers.append('Content-Type', 'application/json');
@@ -39,11 +40,11 @@ export class AjaxItemService {
     }
   }
 
-  post(itemType: string, form: Object) {
+  post(itemType: string, form: Object): Observable<any> {
     const headers = new Headers()
     headers.append('Content-Type', 'application/json');
     if (this.auth.isAuthenticated()) {
-      headers.append('authentication', this.auth.token);
+      headers.append('Authorization', 'Bearer ' + this.auth.token);
     }
     const options = new RequestOptions({ headers: headers });
     return this.http.post(this.urls[itemType], form, options)
