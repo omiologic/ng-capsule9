@@ -1,4 +1,4 @@
-import { AjaxItemActions } from '../../../ajax/src/ajax-item/ajax-item.actions';
+import { AjaxItemActions } from '@capsule9/ajax';
 import { AUTH_TYPES } from '../auth.type';
 // -------------------------------------------------------------------
 // TOKEN STORE : not being used still in development

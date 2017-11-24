@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import * as elementResizeDetectorMaker from 'element-resize-detector';
+import elementResizeDetectorMaker from 'element-resize-detector';
 
 @Injectable()
 export class ResizeService {

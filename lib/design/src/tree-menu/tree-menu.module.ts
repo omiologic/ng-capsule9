@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import {trigger, state, style, transition, animate} from '@angular/animations';
 import {MenuItem} from './tree-menu.types';
 import {RouterModule} from '@angular/router';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {TabsetModule} from '../tabset/tabset.module'
 
 
@@ -31,7 +30,7 @@ export class BaseTreeMenuItem {
 }
 
 @Component({
-  selector: 'ms-tree-menu-sub',
+  selector: 'cp-tree-menu-sub',
   template: `
     <ul class="tree-menu-sub" [@submenu]="expanded ? 'visible' : 'hidden'">
       <ng-template ngFor let-child [ngForOf]="item.children">
@@ -216,7 +215,6 @@ export class TreeMenuComponent extends BaseTreeMenuItem {
     CommonModule,
     RouterModule,
     TabsetModule,
-    // BrowserAnimationsModule
   ],
   declarations: [
     TreeMenuComponent,

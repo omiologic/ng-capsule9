@@ -23,7 +23,7 @@ if (!envFile) {
 Promise.all(PACKAGES.map((pkg) => {
   return Promise.resolve().then(() => {
     shell.cd('dist');
-    shell.cd('packages');
+    shell.cd('packages-dist');
     shell.cd(pkg);
     shell.echo(chalk.green(`Publishing @capsule9/${pkg}`));
     const npmPublish = shell.exec('npm publish --access=public').code;

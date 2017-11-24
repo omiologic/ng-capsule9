@@ -1,6 +1,6 @@
 {
   "name": "ng-capsule9",
-  "version": "0.0.2",
+  "version": "0.0.5",
   "license": "MIT",
   "scripts": {
     "link:lib": "node ./bin/mklink.js",

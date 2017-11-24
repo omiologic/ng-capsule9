@@ -9,13 +9,16 @@
   "author": "omiologic",
   "license": "MIT",
   "dependencies": {
-    "tslib": "0.0.0-PLACEHOLDER"
+    "tslib": "0.0.0-PLACEHOLDER",
+    "element-resize-detector": "0.0.0-PLACEHOLDER"
   },
   "peerDependencies": {
     "rxjs": "0.0.0-PLACEHOLDER",
     "zone.js": "0.0.0-PLACEHOLDER",
     "@angular/core": "0.0.0-PLACEHOLDER",
-    "@angular/common": "0.0.0-PLACEHOLDER"
+    "@angular/common": "0.0.0-PLACEHOLDER",
+    "@angular/router": "0.0.0-PLACEHOLDER",
+    "@angular/animations": "0.0.0-PLACEHOLDER"
   },
   "repository": {
     "type": "git",

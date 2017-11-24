@@ -2,18 +2,18 @@
   "extends": "../tsconfig-build.json",
 
   "compilerOptions": {
-    "baseUrl": "../",
-    "rootDir": "../",
+    "baseUrl": ".",
+    "rootDir": ".",
     "paths": {
-      "rxjs/*": ["../node_modules/rxjs/*"],
-      "@angular/*": ["../node_modules/@angular/*"],
-      "@capsule9/*": ["./*/public_api.ts"]
+      "rxjs/*": ["../../node_modules/rxjs/*"],
+      "@angular/*": ["../../node_modules/@angular/*"]
+//      "@capsule9/auth": ["../auth"]
     },
-    "outDir": "../../dist/packages"
+    "outDir": "../../dist/packages/ajax"
   },
 
   "files": [
-    "./ajax.ts"
+    "public_api.ts"
   ],
 
   "angularCompilerOptions": {
