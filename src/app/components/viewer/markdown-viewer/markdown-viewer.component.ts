@@ -28,7 +28,7 @@ export class MarkdownViewerComponent implements OnInit {
 
       function marddownUrlToRouteUrl(url: string) {
         if (url.includes('/blob/master/src/lib/') || url.endsWith('.md')) {
-          const pathArr = url.replace('/blob/master/src/lib/components/', 'reference/').split('/');
+          const pathArr = url.replace('/blob/master/src/lib/design/', 'reference/').split('/');
           pathArr.pop();
           return pathArr.join('/');
         }

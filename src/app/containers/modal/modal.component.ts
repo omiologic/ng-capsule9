@@ -1,5 +1,5 @@
 import {AfterViewInit, Component, OnDestroy, ViewChild} from '@angular/core';
-import {ModalComponent} from '../../../lib/components/modal/modal.component';
+import {ModalComponent} from '../../../../lib/design/src/modal/modal.component';
 
 @Component({
   selector: 'demo-modal',

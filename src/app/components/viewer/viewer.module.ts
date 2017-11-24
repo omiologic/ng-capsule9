@@ -5,8 +5,8 @@ import {ExampleViewerComponent} from './example-viewer/example-viewer.component'
 import {MarkdownModule} from 'angular2-markdown';
 import {CommonModule} from '@angular/common';
 import {RouterModule} from '@angular/router';
-import {TabsetModule} from '../../../lib/components/tabset/tabset.module';
-import {IconModule} from '../../../lib/components/icon/icon.module';
+import {TabsetModule} from '../../../../lib/design/src/tabset/tabset.module';
+import {IconModule} from '../../../../lib/design/src/icon/icon.module';
 import { MarkdownToHtmlModule } from 'ng2-markdown-to-html';
 
 const VIEWER_COMPONENTS = [

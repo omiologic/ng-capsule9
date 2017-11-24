@@ -1,0 +1,27 @@
+{
+  "extends": "../tsconfig-build.json",
+
+  "compilerOptions": {
+    "baseUrl": ".",
+    "rootDir": ".",
+    "paths": {
+      "rxjs/*": ["../../node_modules/rxjs/*"],
+      "@angular/*": ["../../node_modules/@angular/*"],
+      "@capsule9/ajax": ["."]
+    },
+    "outDir": "../../dist/packages/ajax"
+  },
+
+  "files": [
+    "public_api.ts"
+  ],
+
+  "angularCompilerOptions": {
+    "annotateForClosureCompiler": true,
+    "strictMetadataEmit": false,
+    "skipTemplateCodegen": true,
+    "flatModuleOutFile": "ajax.js",
+    "flatModuleId": "@capsule9/ajax"
+  }
+}
+

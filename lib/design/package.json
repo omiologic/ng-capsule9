@@ -1,0 +1,34 @@
+{
+  "name": "@capsule9/design",
+  "version": "0.0.0-PLACEHOLDER",
+  "description": "Capsule - design",
+  "main": "./bundles/design.umd.js",
+  "module": "./esm5/design.js",
+  "es2015": "./esm2015/design.js",
+  "typings": "./design.d.ts",
+  "author": "omiologic",
+  "license": "MIT",
+  "dependencies": {
+    "tslib": "0.0.0-PLACEHOLDER",
+    "element-resize-detector": "0.0.0-PLACEHOLDER"
+  },
+  "peerDependencies": {
+    "rxjs": "0.0.0-PLACEHOLDER",
+    "zone.js": "0.0.0-PLACEHOLDER",
+    "@angular/core": "0.0.0-PLACEHOLDER",
+    "@angular/common": "0.0.0-PLACEHOLDER",
+    "@angular/router": "0.0.0-PLACEHOLDER",
+    "@angular/animations": "0.0.0-PLACEHOLDER"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/omiologic/ng-capsule9.git"
+  },
+  "bugs": {
+    "url": "https://github.com/omiologic/ng-capsule9/issues"
+  },
+  "homepage": "https://github.com/omiologic/ng-capsule9#readme",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}

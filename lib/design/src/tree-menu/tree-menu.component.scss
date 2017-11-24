@@ -1,0 +1,20 @@
+ms-tree-menu {
+  .tabs {
+    a {
+      //padding: 0;
+      &:hover, &:focus {
+        outline: none;
+      }
+    }
+
+    ul, a {
+      border-bottom: none;
+    }
+  }
+}
+ms-tree-menu-sub {
+  > ul.tree-menu-sub {
+    display: block;
+    overflow: hidden;
+  }
+}

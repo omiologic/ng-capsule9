@@ -34,27 +34,6 @@
         "hmr": "environments/environment.hmr.ts",
         "prod": "environments/environment.prod.ts"
       }
-    },
-    {
-      "name": "lib",
-      "root": "src/lib",
-      "outDir": "dist",
-      "assets": [
-        "assets",
-        "favicon.ico"
-      ],
-      "main": "../main.ts",
-      "polyfills": "../polyfills.ts",
-      "test": "../test.ts",
-      "tsconfig": "../tsconfig.json",
-      "prefix": "cp",
-      "scripts": [],
-      "environmentSource": "environments/environment.ts",
-      "environments": {
-        "dev": "environments/environment.ts",
-        "hmr": "environments/environment.hmr.ts",
-        "prod": "environments/environment.prod.ts"
-      }
     }
   ],
   "e2e": {

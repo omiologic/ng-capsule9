@@ -2,7 +2,7 @@ import {Component, OnInit, ViewChild, ViewEncapsulation} from '@angular/core';
 import {DOCUMENTATION_SIDEBAR} from './app.data';
 import {Location} from '@angular/common';
 import {NavigationEnd, Router} from '@angular/router';
-import {SidebarComponent} from '../lib/components/sidebar/sidebar.component';
+import {SidebarComponent} from '../../lib/design/src/sidebar/old/sidebar.component';
 
 @Component({
   selector: 'demo-root',

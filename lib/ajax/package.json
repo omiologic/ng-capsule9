@@ -1,0 +1,37 @@
+{
+  "name": "@capsule9/ajax",
+  "version": "0.0.0-PLACEHOLDER",
+  "description": "Capsule - ajax",
+  "main": "./bundles/ajax.umd.js",
+  "module": "./esm5/ajax.js",
+  "es2015": "./esm2015/ajax.js",
+  "typings": "./ajax.d.ts",
+  "author": "omiologic",
+  "license": "MIT",
+  "dependencies": {
+    "@capsule9/auth": "0.0.0-PLACEHOLDER",
+    "redux": "0.0.0-PLACEHOLDER",
+    "redux-observable": "0.0.0-PLACEHOLDER",
+    "tslib": "0.0.0-PLACEHOLDER"
+  },
+  "peerDependencies": {
+    "redux": "0.0.0-PLACEHOLDER",
+    "rxjs": "0.0.0-PLACEHOLDER",
+    "redux-observable": "0.0.0-PLACEHOLDER",
+    "zone.js": "0.0.0-PLACEHOLDER",
+    "@angular/core": "0.0.0-PLACEHOLDER",
+    "@angular/common": "0.0.0-PLACEHOLDER",
+    "@angular/http": "0.0.0-PLACEHOLDER"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/omiologic/ng-capsule9.git"
+  },
+  "bugs": {
+    "url": "https://github.com/omiologic/ng-capsule9/issues"
+  },
+  "homepage": "https://github.com/omiologic/ng-capsule9#readme",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
