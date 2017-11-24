@@ -6,7 +6,7 @@ export class AjaxItemActions {
   static readonly LOAD_SUCCEEDED = 'LOAD_SUCCEEDED';
   static readonly LOAD_FAILED = 'LOAD_FAILED';
 
-  loadItem(itemType, params = {}) {
+  loadItem(itemType: string, params = {}) {
     return {
       type: AjaxItemActions.LOAD_STARTED,
       meta: { itemType },
@@ -14,7 +14,7 @@ export class AjaxItemActions {
     };
   }
 
-  loadSucceeded(itemType, payload) {
+  loadSucceeded(itemType: string, payload: any) {
     return {
       type: AjaxItemActions.LOAD_SUCCEEDED,
       meta: { itemType },
@@ -22,7 +22,7 @@ export class AjaxItemActions {
     };
   }
 
-  loadFailed(itemType, error) {
+  loadFailed(itemType: string, error: any) {
     return {
       type: AjaxItemActions.LOAD_FAILED,
       meta: { itemType },
@@ -30,7 +30,7 @@ export class AjaxItemActions {
     };
   }
 
-  submitForm(itemType, form) {
+  submitForm(itemType: string, form: any) {
     return {
       type: AjaxItemActions.LOAD_STARTED,
       meta: { itemType },

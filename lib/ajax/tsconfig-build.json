@@ -6,8 +6,8 @@
     "rootDir": ".",
     "paths": {
       "rxjs/*": ["../../node_modules/rxjs/*"],
-      "@angular/*": ["../../node_modules/@angular/*"]
-//      "@capsule9/auth": ["../auth"]
+      "@angular/*": ["../../node_modules/@angular/*"],
+      "@capsule9/ajax": ["."]
     },
     "outDir": "../../dist/packages/ajax"
   },

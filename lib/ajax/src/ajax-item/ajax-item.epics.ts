@@ -6,6 +6,7 @@ import 'rxjs/add/operator/map';
 
 import {AjaxItemActions} from './ajax-item.actions';
 import {AjaxItemService} from './ajax-item.service';
+import {Observable} from 'rxjs/Observable';
 
 @Injectable()
 export class AjaxItemEpics {
@@ -28,7 +29,7 @@ export class AjaxItemEpics {
    * @param props - see params passed to simpleEpic
    * @returns {EpicMiddleware<T, S>}
    */
-  public createSimpleEpic(props) {
+  public createSimpleEpic(props: any) {
     return createEpicMiddleware(this.simpleEpic(props));
   }
 
@@ -39,18 +40,18 @@ export class AjaxItemEpics {
    * @param {(action$:any)=>Observable<R>} trigger - The input action/observable
    * @returns {(action$:any)=>Observable<R>} - Returns action if not filtered
    */
-  private simpleEpic({action, filter, trigger}) {
+  private simpleEpic(config: {action: any, filter: string, trigger: string}): (action$: any) => Observable<any> {
     return action$ => action$
-      .ofType(trigger)
+      .ofType(config.trigger)
       .filter(({payload}) => {
-        if (filter) {
-          return !!payload[filter];
+        if (config.filter) {
+          return !!payload[config.filter];
         } else {
           return true;
         }
 
       })
-      .map(() => action);
+      .map(() => config.action);
   }
 
   /**
@@ -59,7 +60,7 @@ export class AjaxItemEpics {
    * @param {string} itemType
    * @returns {(action$:any)=>Observable<R|T>}
    */
-  private loadFailed(response, itemType) {
+  private loadFailed(response: any, itemType: string) {
     return of(this.actions.loadFailed(itemType, {
       status: '' + response.status,
     }))
@@ -70,7 +71,7 @@ export class AjaxItemEpics {
    * @param {string} itemType
    * @returns {(action$:any)=>Observable<R|T>}
    */
-  private createLoadItemEpic(itemType) {
+  private createLoadItemEpic(itemType: string) {
     return action$ => action$
       .ofType(AjaxItemActions.LOAD_STARTED)
       .filter(({meta}) => {

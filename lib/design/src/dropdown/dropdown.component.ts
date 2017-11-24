@@ -42,6 +42,7 @@ export class DropdownTrigger {
       && !target.className.includes('navbar-item')
       && !target.className.includes('navbar-dropdown')
       && !target.className.includes('dropdown-trigger')
+      && target.parentElement
       && !target.parentElement.className.includes('dropdown-trigger')
     ) {
       this.dropdown.emitChange({ id: null, target });

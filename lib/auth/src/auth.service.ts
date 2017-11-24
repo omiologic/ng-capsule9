@@ -39,8 +39,9 @@ export class AuthService {
     }
   }
 
-  get token(): string | null {
-    const cachedToken = JSON.parse(localStorage.getItem('reduxPersist:token'));
+  get token(): any {
+    const cache: string | null = localStorage.getItem('reduxPersist:token');
+    const cachedToken: any | null = cache ? JSON.parse(cache) : cache;
     console.log('get token()', cachedToken);
     return cachedToken && cachedToken.item ? cachedToken.item.token : null;
   }

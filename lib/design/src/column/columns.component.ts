@@ -14,15 +14,15 @@ import {ColumnsConfig} from './column.config';
 })
 export class ColumnsComponent {
 
-  @HostBinding('class.columns') private _isColumns: boolean;
+  @HostBinding('class.columns') private _isColumns: boolean | undefined;
 
-  @HostBinding('class.is-centered') private _isCentered: boolean;
-  @HostBinding('class.is-vcentered') private _isVCentered: boolean;
-  @HostBinding('class.is-mobile') private _isMobile: boolean;
-  @HostBinding('class.is-desktop') private _isDesktop: boolean;
-  @HostBinding('class.is-multiline') private _isMultiline: boolean;
-  @HostBinding('class.is-layout') private _isGrid: boolean;
-  @HostBinding('class.is-gapless') private _isGapless: boolean;
+  @HostBinding('class.is-centered') private _isCentered: boolean | undefined;
+  @HostBinding('class.is-vcentered') private _isVCentered: boolean | undefined;
+  @HostBinding('class.is-mobile') private _isMobile: boolean | undefined;
+  @HostBinding('class.is-desktop') private _isDesktop: boolean | undefined;
+  @HostBinding('class.is-multiline') private _isMultiline: boolean | undefined;
+  @HostBinding('class.is-layout') private _isGrid: boolean | undefined;
+  @HostBinding('class.is-gapless') private _isGapless: boolean | undefined;
 
   @Input()
   set options(config: ColumnsConfig) {
@@ -30,25 +30,25 @@ export class ColumnsComponent {
       if (option) {
         switch (option) {
           case 'centered':
-            this._isCentered = config[option];
+            this._isCentered = config[option] ? config[option] : false;
             break;
           case 'vcentered':
-            this._isVCentered = config[option];
+            this._isVCentered = config[option] ? config[option] : false;
             break;
           case 'mobile':
-            this._isMobile = config[option];
+            this._isMobile = config[option] ? config[option] : false;
             break;
           case 'desktop':
-            this._isDesktop = config[option];
+            this._isDesktop = config[option] ? config[option] : false;
             break;
           case 'multiline':
-            this._isMultiline = config[option];
+            this._isMultiline = config[option] ? config[option] : false;
             break;
           case 'grid':
-            this._isGrid = config[option];
+            this._isGrid = config[option] ? config[option] : false;
             break;
           case 'gapless':
-            this._isGapless = config[option];
+            this._isGapless = config[option] ? config[option] : false;
             break;
         }
       }
