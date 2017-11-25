@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import {NgRedux, select} from '@angular-redux/store';
-
-import { AjaxItemActions } from 'ng-capsule9';
+import { AjaxItemActions } from '../../ajax/src/ajax-item/ajax-item.actions';
 import { AUTH_TYPES } from './auth.type';
 import { JwtHelper } from 'angular2-jwt';
 import {Observable} from 'rxjs/Observable';
