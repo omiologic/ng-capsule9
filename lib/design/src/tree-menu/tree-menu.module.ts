@@ -3,12 +3,12 @@ import { CommonModule } from '@angular/common';
 import {trigger, state, style, transition, animate} from '@angular/animations';
 import {MenuItem} from './tree-menu.types';
 import {RouterModule} from '@angular/router';
-import {TabsetModule} from '../tabset/tabset.module'
+import {TabsetModule} from '../tabset/tabset.module';
 
 
 export class BaseTreeMenuItem {
 
-  handleClick(event, item) {
+  handleClick(event: any, item: any) {
     if (item.disabled) {
       event.preventDefault();
       return;
@@ -69,7 +69,7 @@ export class BaseTreeMenuItem {
             <span class="ui-menuitem-icon fa fa-fw" [ngClass]="child.icon" *ngIf="child.icon"></span>
             <span class="ui-menuitem-text">{{child.label}}</span>
           </a>
-          <ms-tree-menu-sub [item]="child" [expanded]="child.expanded" *ngIf="child.children"></ms-tree-menu-sub>
+          <cp-tree-menu-sub [item]="child" [expanded]="child.expanded" *ngIf="child.children"></cp-tree-menu-sub>
         </li>
       </ng-template>
     </ul>
@@ -99,13 +99,13 @@ export class TreeMenuSubComponent extends BaseTreeMenuItem {
     console.log('TreeMenuSubComponent', this.item);
   }
 
-  handleClick(event, item) {
+  handleClick(event: any, item: MenuItem) {
     super.handleClick(event, item);
   }
 }
 
 @Component({
-  selector: 'ms-tree-menu',
+  selector: 'cp-tree-menu',
   template: `
     <div [class]="styleClass" [ngStyle]="style"
          [ngClass]="'panel'">
@@ -135,7 +135,7 @@ export class TreeMenuSubComponent extends BaseTreeMenuItem {
                  [routerLinkActive]="'ui-state-active'"
                  [routerLinkActiveOptions]="item.routerLinkActiveOptions||{exact:false}"
                  [ngClass]="{'ui-panelmenu-headerlink-hasicon':item.icon}"
-                 (click)="handleClick($event,item)"
+                 (click)="handleClick($event, item)"
                  [attr.target]="item.target" [attr.title]="item.title">
                 <!--<span *ngIf="item.children" class="ui-panelmenu-icon fa"
                   [ngClass]="{'fa-caret-right':!item.expanded,'fa-caret-down':item.expanded}"></span>-->
@@ -148,7 +148,7 @@ export class TreeMenuSubComponent extends BaseTreeMenuItem {
                    [@rootItem]="item.expanded ? 'visible' : 'hidden'"
                    (@rootItem.done)="onToggleDone($event)"
                    [ngClass]="{'ui-panelmenu-content-wrapper-overflown': !item.expanded||animating}">
-                <ms-tree-menu-sub [item]="item" [expanded]="true"></ms-tree-menu-sub>
+                <cp-tree-menu-sub [item]="item" [expanded]="true"></cp-tree-menu-sub>
               </div>
             </ng-template>
           </cp-tab>
@@ -179,7 +179,7 @@ export class TreeMenuComponent extends BaseTreeMenuItem {
 
   @Input() styleClass: string;
 
-  @Input() multiple: boolean = true;
+  @Input() multiple = true;
 
   public animating: boolean;
 
@@ -191,7 +191,7 @@ export class TreeMenuComponent extends BaseTreeMenuItem {
     }
   }
 
-  handleClick(event, item) {
+  handleClick(event: any, item: any) {
     if (!this.multiple) {
       for (const modelItem of this.model) {
         if (item !== modelItem && modelItem.expanded) {

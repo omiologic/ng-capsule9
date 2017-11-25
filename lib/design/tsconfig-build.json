@@ -12,12 +12,13 @@
   },
 
   "files": [
-    "public_api.ts"
+    "public_api.ts",
+    "../../node_modules/zone.js/dist/zone.js.d.ts"
   ],
 
   "angularCompilerOptions": {
     "annotateForClosureCompiler": true,
-    "strictMetadataEmit": false,
+    "strictMetadataEmit": true,
     "skipTemplateCodegen": true,
     "flatModuleOutFile": "design.js",
     "flatModuleId": "@capsule9/design"

@@ -209,6 +209,7 @@ const buildLib = Promise.all(PACKAGES.map((PACKAGE) => {
 
   const PWD = process.cwd();
   const ROOT_DIR = `${PWD}/lib`;
+  const TEMP_DIR = `${PWD}/.tmp`;
   const SRC_DIR = `${ROOT_DIR}/${PACKAGE}`;
   const ROOT_OUT_DIR = `${PWD}/dist/packages`;
   const OUT_DIR = `${ROOT_OUT_DIR}/${PACKAGE}`;
@@ -221,8 +222,11 @@ const buildLib = Promise.all(PACKAGES.map((PACKAGE) => {
   // rollupIndex ${OUT_DIR} ${ESM2015_DIR} ${PACKAGE}
 
   // compilePackage ${SRC_DIR} ${OUT_DIR} ${PACKAGE}
+  shell.mkdir('dist');
+  shell.mkdir('dist/packages');
 
-  return compilePackage(SRC_DIR, OUT_DIR, PACKAGE).then(() => {
+  return Promise.resolve(shell.cp('-r', SRC_DIR, ROOT_OUT_DIR)).then(() =>
+    compilePackage(SRC_DIR, OUT_DIR, PACKAGE)).then(() => {
     shell.mkdir('-p', NPM_DIR);
     shell.echo(`Copy ${PACKAGE} typings`);
     return shell.exec(`rsync -a --exclude=*.js --exclude=*.js.map ${OUT_DIR}/ ${NPM_DIR}`);

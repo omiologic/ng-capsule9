@@ -1,18 +1,19 @@
 import { Injectable } from '@angular/core';
 import {NgRedux, select} from '@angular-redux/store';
 
-import { AjaxItemActions } from '@capsule9/ajax';
+import { AjaxItemActions } from 'ng-capsule9';
 import { AUTH_TYPES } from './auth.type';
 import { JwtHelper } from 'angular2-jwt';
 import {Observable} from 'rxjs/Observable';
 import {Subscription} from 'rxjs/Subscription';
+import {Subscriber} from 'rxjs/Subscriber';
 
 @Injectable()
 export class AuthService {
   @select(['token', 'item', 'token']) readonly token$: Observable<string>;
   @select(['token', 'error']) readonly tokenError$: Observable<any>;
 
-  tokenSubscription$;
+  tokenSubscription$: Subscription;
   constructor(
     private store: NgRedux<any>,
     private ajaxItem: AjaxItemActions,

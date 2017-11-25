@@ -8,6 +8,8 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { AuthService } from '../auth.service';
+import {Subscription} from 'rxjs/Subscription';
+import {Subscriber} from 'rxjs/Subscriber';
 
 @Component({
   selector: 'cp-login-form',
@@ -24,7 +26,7 @@ export class LoginFormComponent implements OnInit, OnDestroy {
   loginForm: FormGroup;
   @Input() public successRedirectUrl: string;
 
-  public tokenSubscription$;
+  public tokenSubscription$: any;
   constructor(
     fb: FormBuilder,
     location: Location,

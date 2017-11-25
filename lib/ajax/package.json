@@ -8,13 +8,8 @@
   "typings": "./ajax.d.ts",
   "author": "omiologic",
   "license": "MIT",
-  "dependencies": {
-    "@capsule9/auth": "0.0.0-PLACEHOLDER",
-    "redux": "0.0.0-PLACEHOLDER",
-    "redux-observable": "0.0.0-PLACEHOLDER",
-    "tslib": "0.0.0-PLACEHOLDER"
-  },
   "peerDependencies": {
+    "@capsule9/auth": "0.0.0-PLACEHOLDER",
     "redux": "0.0.0-PLACEHOLDER",
     "rxjs": "0.0.0-PLACEHOLDER",
     "redux-observable": "0.0.0-PLACEHOLDER",

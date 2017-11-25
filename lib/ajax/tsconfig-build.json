@@ -7,13 +7,14 @@
     "paths": {
       "rxjs/*": ["../../node_modules/rxjs/*"],
       "@angular/*": ["../../node_modules/@angular/*"],
-      "@capsule9/ajax": ["."]
+      "@capsule9/auth": ["../../dist/packages/@capsule9/auth"]
     },
     "outDir": "../../dist/packages/ajax"
   },
 
   "files": [
-    "public_api.ts"
+    "public_api.ts",
+    "../../node_modules/zone.js/dist/zone.js.d.ts"
   ],
 
   "angularCompilerOptions": {
