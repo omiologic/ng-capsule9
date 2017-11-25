@@ -9,7 +9,6 @@
   "author": "omiologic",
   "license": "MIT",
   "dependencies": {
-    "tslib": "0.0.0-PLACEHOLDER",
     "element-resize-detector": "0.0.0-PLACEHOLDER"
   },
   "peerDependencies": {

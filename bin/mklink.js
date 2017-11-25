@@ -10,7 +10,7 @@ const chalk = require('chalk');
 const fs = require('fs');
 const path = require('path');
 const pkg = require('../package.json');
-const appLink = path.resolve(__dirname, '..', 'node_modules', '@capsule9');
+const appLink = path.resolve(__dirname, '..', 'node_modules', 'ng-capsule9');
 
 const symlinkError = error => (
   `*******************************************************************
@@ -41,7 +41,7 @@ function makeAppSymlink() {
     try { fs.unlinkSync(appLink) } catch (swallowed) { }
     // fs.symlinkSync docs: https://nodejs.org/api/fs.html#fs_fs_symlinksync_target_path_type
     const linkType = process.platform === 'win32' ? 'junction' : 'dir'
-    fs.symlinkSync('../lib/', appLink, linkType)
+    fs.symlinkSync('../', appLink, linkType)
   } catch (error) {
     console.error(chalk.red(symlinkError(error)))
     // process.exit docs: https://nodejs.org/api/process.html#process_process_exit_code
