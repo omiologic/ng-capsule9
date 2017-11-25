@@ -4,7 +4,7 @@ import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { NgReduxModule } from '@angular-redux/store';
 import { ReactiveFormsModule } from '@angular/forms';
-import { AjaxItemModule } from 'ng-capsule9';
+import { AjaxItemModule } from '../../ajax/src/ajax-item/ajax-item.module';
 import { LogoutButtonDirective } from './auth.directive';
 import { LoginFormComponent } from './login/login-form.component';
 import { AuthService } from './auth.service';

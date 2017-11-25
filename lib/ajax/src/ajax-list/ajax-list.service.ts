@@ -1,8 +1,8 @@
 import {Inject, Injectable, OpaqueToken} from '@angular/core';
 import {Headers, Http, RequestOptions, URLSearchParams} from '@angular/http';
 import 'rxjs/add/operator/map';
-import {AuthService} from 'ng-capsule9';
 import {Observable} from 'rxjs/Observable';
+import {AuthService} from '../../../auth/src/auth.service';
 
 export const AJAX_LIST_API_URLS = new OpaqueToken('ajax-list-service AJAX_LIST_API_URLS');
 

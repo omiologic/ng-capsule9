@@ -1,7 +1,7 @@
 import {Inject, Injectable, OpaqueToken} from '@angular/core';
 import {Headers, Http, RequestOptions, URLSearchParams} from '@angular/http';
 import 'rxjs/add/operator/map';
-import {AuthService} from 'ng-capsule9';
+import {AuthService} from '../../../auth/src/auth.service';
 import {Observable} from 'rxjs/Observable';
 
 export const AJAX_ITEM_API_URLS = new OpaqueToken('ajax-item-service AJAX_ITEM_API_URLS');
